@@ -1,4 +1,6 @@
 //Data 
+
+// 🛑 What data types do you see?
 const inventory = [
   {
     id: 1,
