@@ -74,52 +74,82 @@ const inventory = [
 - blurb(book)
 */
 
-// Start here!
+//1. Create hello world using REGULAR functions
+//🛑 run live server and call in console
+//🛑 wsl users have to manually type in the address
+//wsl is subsystem (ubuntu in windows, chrome on windows), port is exposed (can't open another computer) 
+function helloWorld(){
+  //🛑 show difference between returning/getting undefined
+  //return "Hello, World!";
+  console.log("hello, world!");
+}
+
+//2. I DO: For Easley's bookstore, create formatPrice(price)
+function formatPrice(price){
+  //🛑 look up .toFixed on the internet - MDN docs?
+  //🛑 .prototype means the function will apply to every instance of a Number
+  return `$${Number.parseFloat(price).toFixed(2)}`
+  //console.log('$' + Number.parseFloat(price).toFixed(2))
+  //console.log(`$${Number.parseFloat(price).toFixed(2)})`
+}
 
 
+//3. I DO: Make an arrow function version of formatPrice
+//🛑 why const and not let?
+//🛑 implicit return, how to do explicit return?
+formatPrice = (price) => `$${Number.parseFloat(price).toFixed(2)}`
 
-
-// 💡 Arrow functions vs regular functions
-
-// ✅ create an arrow function version of the formatPrice function
-
-
-
-// ✅ create a blurb() function that accepts a book as an argument and logs a message in the following format:
+//4. WE DO: create a blurb() function that accepts a book as an argument and logs a message in the following format:
 // 'Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $10.00'
+//🛑 how to access a key/value pair
+const blurb = (book) => {
+  return `${book.title} is on sale for ${formatPrice(book.price)}`
+}
 
+// 💡 ~~~~~~~~~~ slides: callbacks ~~~~~~~~~~~~~
 
+//5. Call formatPrice on an array of prices
 
-// 💡 Difference between Block scope, Function scope, and Global scope
+//5a. Create an array
+const prices = [3, 2.3, 55, 9.3]
 
-// ✅ create a variable `highestPricedBook`
+//5b. Use a for loop to iterate over prices
+for(let i = 0; i < prices.length; i++){
+  console.log(formatPrice(prices[i]))
+}
 
+//5c. Use .forEach to iterate over prices
+//🛑 check MDN for .forEach
+prices.forEach((price, i) => {
+  console.log(formatPrice(price))
+})
 
+// 💡 ~~~~~~~~ slides: scope ~~~~~~~~~~~~~~~
 
-// ✅ create a function `findHighestPricedBook` that finds that book and returns it
+//5d. Use .map to iterate over prices
+//🛑 check MDN for .map
+//🛑 is this implicit or explicit return?
+//🛑 notice how we're using 'price' like in .forEach
+//💡 why are we allowed to do this, are they different?
+prices.map((price, i) => {
+  return formatPrice(price)
+})
+console.log(prices)
 
+//5e. WE DO: using .map, for each book in inventory, return blurb(book)
+//output: ['Eloquent JavaScript: A Modern Introduction to Programming is on sale for $10.00', ...]
+let blurbs = inventory.map(book => {
+  return blurb(book)
+})
+console.log(blurbs)
 
-
-// After Break
-
-// ✅ Create a function called `log` that takes a function and its argument as arguments
-// and logs a message explaining the name of the function, the argument passed and 
-// the return value 
-
-// 💡 Practice using callbacks for iteration
-
-
-
-// ✅ Create an array of the prices of all of the books
-
-
-
-// ✅ Create an array of simplified book objects
-
-
-
-// ✅ Create an array of strings from the inventory in the following format:
-// 'Eloquent JavaScript: A Modern Introduction to Programming by Marjin Haverbeke is on sale for $10.00'
-
-
-// 💡 When do I use forEach vs map?
+//6. Create a version of myMap that uses a for loop to mimic .map
+//input: array, callback function
+//output: a new array
+function myMap(array, cb){
+  const newArray = []
+  for(let i = 0; i < array.length; i++){
+    newArray.push(cb(array[i]))
+  }
+  return newArray;
+}

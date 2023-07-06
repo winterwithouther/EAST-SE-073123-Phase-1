@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>VSCode Reveal intro</title>
+  <title>01_function_scope</title>
 
   <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
   <meta name="author" content="Hakim El Hattab">
@@ -53,6 +53,13 @@
 	
 
    
+<style>
+  :root {
+     --r-main-font-size: 24px;
+        
+  }
+</style>
+
 
 </head>
 
@@ -71,8 +78,63 @@
     
         <section >
             
-            <h1>Functions &amp; Scope</h1>
+            <h1>Functions and Scope</h1>
 
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <div style="font-size: 0.75em">
+<h3>My Setup</h3>
+<h5>VSCode extensions:</h5>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio">Draw.io Integation</a></td>
+<td>for making diagrams from within VSCode</td>
+</tr>
+<tr>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a></td>
+<td>for opening a webpage in the browser that will reload when the code is saved</td>
+</tr>
+<tr>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal">vscode-reveal</a></td>
+<td>for opening the <a href="http://slide.md">slide.md</a> files in the browser to display slideshows</td>
+</tr>
+<tr>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">Tabnine AI Autocomplete</a></td>
+<td>for code completion suggestions based on context</td>
+</tr>
+<tr>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier</a></td>
+<td>auto format HTML, JSON, CSS, JS, etc.</td>
+</tr>
+<tr>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate">HTML Boilerplate</a></td>
+<td>create html boilerplate</td>
+</tr>
+<tr>
+<td><a href="https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja">Console Ninja</a></td>
+<td>displays console.log output and runtime errors directly in your editor from your running browser</td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="notes">
+- Show how to do tab extensions <br />
+- Tabnine also autocompletes based on what's already in the code (function, var names) <br />
+- Be sparing of autocomplete, important to type things out to get used to them
+</aside>
             </section>
     
 
@@ -111,53 +173,13 @@
     <iframe src="https://giphy.com/embed/VTc0g9IKEpLAk" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/funny-everyone-VTc0g9IKEpLAk">via GIPHY</a></p>
   </div>
   <div style="width: 70%">
-<ul>
-<li>it can help</li>
-<li class="fragment">it can also hurt 😬</li>
-<li class="fragment">If you get stuck, take a screenshot and refocus on our discussion</li>
-<li class="fragment">💡Everything is recorded!</li>
-<li class="fragment">Focus on high level understanding &gt; implementation</li>
-<li class="fragment">Comfort solving errors and fixing bugs will come with practice and experience</li>
-</ul>
+  - it can help
+  - it can also hurt 😬 {.fragment}
+  - If you get stuck, take a screenshot and refocus on our discussion {.fragment}
+  - 💡Everything is recorded! {.fragment}
+  - Focus on high level understanding > implementation {.fragment}
+  - Comfort solving errors and fixing bugs will come with practice and experience {.fragment}
   </div>
-</div>
-            </section>
-    
-
-
-
-    
-        <section >
-            
-            <div style="font-size: 0.75em">
-<h3>My Setup</h3>
-<h5>VSCode extensions:</h5>
-<table>
-<thead>
-<tr>
-<th>Extension</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio">Draw.io Integation</a></td>
-<td>for making diagrams from within VSCode</td>
-</tr>
-<tr>
-<td><a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a></td>
-<td>for opening a webpage in the browser that will reload when the code is saved</td>
-</tr>
-<tr>
-<td><a href="https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal">vscode-reveal</a></td>
-<td>for opening the <a href="http://slide.md">slide.md</a> files in the browser to display slideshows</td>
-</tr>
-<tr>
-<td><a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode">Tabnine AI Autocomplete</a></td>
-<td>for code completion suggestions based on context</td>
-</tr>
-</tbody>
-</table>
 </div>
             </section>
     
@@ -182,7 +204,9 @@
 <li>Identify higher-order functions</li>
 <li>Define callback functions and higher-order functions</li>
 </ul>
-
+<aside class="notes">
+- last 3 are not fully necessary 
+</aside>
             </section>
     
 
@@ -191,9 +215,17 @@
     
         <section >
             
-            <h2>Functions</h2>
-<p><img src="./functions.drawio.svg" alt="functions"></p>
-
+            <h1>Functions</h1>
+<p align="center">
+    <img src="../assets/functions.jpeg" width="250" height="250">
+</p>
+<aside class="notes">
+- 2 separate phases: definition (compilation), execution (runtime/invocation) <br />
+- tell computer how to remember a certain set of instructions <br />
+- may want to repeat set of instructions multiple times
+- Definition: storing logic for later use <br />
+- Invocation: running logic (maybe with specific value) and returning back with value 
+</aside>
             </section>
     
 
@@ -224,13 +256,16 @@
 <td>returns the price like so: “$2.99”</td>
 </tr>
 <tr>
-<td>titleAndAuthor</td>
-<td>book (object)</td>
-<td>returns a string containing both the title and author of the book</td>
+<td>blurb</td>
+<td>book (obj)</td>
+<td>returns a string representation of the book with title author and price</td>
 </tr>
 </tbody>
 </table>
 </div>
+<aside class="notes">
+- deliverables #a - g?
+</aside>
             </section>
     
 
@@ -240,13 +275,20 @@
         <section >
             
             <h3>() =&gt; {} vs function() {}</h3>
+<p><img src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1670868682/phase1/reg-to-arrow-function_bqrtqj.gif" alt="regular to arrow function conversion"></p>
 <ul>
 <li class="fragment">syntax</li>
 <li class="fragment">simplified vs fully featured</li>
 <li class="fragment">interchangeable for now (hoisting! 😅)</li>
 <li class="fragment">read more about <a href="https://dmitripavlutin.com/differences-between-arrow-and-regular-functions/">differences</a> (or feel free to bookmark for later)</li>
 </ul>
-
+<p><img src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1670868681/phase1/arrow-to-reg-function_snfnkx.gif" alt="arrow function to reegular function conversion"></p>
+<aside class="notes">
+- function keyword gets hoisted to top of file scope <br />
+- arrow functions not as fully featured <br />
+- let, const gets hoisted but the value assigned to it doesn't get hoisted <br />
+- arrow functions are super good for callbacks
+</aside>
             </section>
     
 
@@ -258,7 +300,39 @@
             <h4>Scope &amp; The Scope Chain</h4>
 <p><img src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1665447423/1_S9gu5XK8LBTSVddsGdBtGg_kq2mnh.png" alt="Scope and the Scope Chain"></p>
 <p><a href="https://medium.com/joonsikyang/scope-and-the-scope-chain-27216a853a4e">Awesome Blog post on Scope and the Scope Chain</a></p>
+<aside class="notes">
+</aside>
+            </section>
+    
 
+
+
+    
+        <section >
+            
+            <h3>Callbacks and HOF</h3>
+<p><img src="./callbacks-pt-1.drawio.svg" alt="Callbacks pt1"></p>
+<div style="font-size: 0.75em">
+<h4>Higher Order Functions</h4>
+<ul>
+<li>accept a function as a parameter</li>
+<li>(and/or) return a function</li>
+</ul>
+</div>
+<aside class="notes">
+</aside>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Callbacks and Iteration</h3>
+<p><img src="./callbacks-pt-2.drawio.svg" alt="Callbacks pt2"></p>
+<aside class="notes">
+</aside>
             </section>
     
 
@@ -291,6 +365,8 @@
 </tbody>
 </table>
 </div>
+<aside class="notes">
+</aside>
             </section>
     
 
@@ -396,7 +472,7 @@
       //#keyboardCondition: null,
       overview: true,
       center: true,
-      touch: true,
+      touch: false,
       loop: false,
       rtl: false,
       //#navigationMode: 'default', linear grid
@@ -445,7 +521,7 @@
       //Presentation Size
       width: 960,
 			height: 700,
-			margin: 0.04,
+			margin: 0.01,
       minScale: 0.2,
       maxScale: 2,
       disableLayout: false,
