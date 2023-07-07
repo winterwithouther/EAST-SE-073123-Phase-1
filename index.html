@@ -3,14 +3,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
-    <!-- Css style sheet -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Data file -->
-    <script src="src/data.js"></script>
-    <!-- JavaScript file -->
-    <!-- defer - this file will load after the DOM loads -->
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,300;0,400;1,600&family=La+Belle+Aurore&family=Nanum+Myeongjo:wght@400;700&family=Norican&display=swap" rel="stylesheet"> <link rel="stylesheet" href="my-style.css">
+    <!--STYLE SHEET-->
+    <link rel="stylesheet" href="./style.css" />
+    <!--JAVASCRIPT-->
+    <script defer src="src/data.js"></script>
     <script defer src="src/index.js"></script>
 
     <title>JS DOM Manipulation</title>
@@ -23,8 +23,8 @@
       </header>
       <main>
         <div class="list">
-          <ul id="book-list">
-            <li class="list-li">
+          <ul id="book-list" class="cards">
+            <li class="card">
               <h3>Eloquent JavaScript : A Modern Introduction to Programming</h3>
               <p>Marjin Haverbeke</p>
               <p>$10.00</p>
