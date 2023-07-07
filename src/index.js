@@ -31,7 +31,7 @@ function renderFooter(bookStore) {
 function renderBook(book) {
     
   const li = document.createElement('li');
-  li.className = 'list-li';
+  li.classNameList = 'list-li card';
   
   const h3 = document.createElement('h3');
   h3.textContent = book.title;

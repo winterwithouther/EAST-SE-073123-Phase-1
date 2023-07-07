@@ -3,8 +3,8 @@
 - [ ] Explain the importance of event handling in modern web applications
 - [ ] Explain how callback functions are used with event listeners
 - [ ] Observe how to add a form to a webpage using HTML and JavaScript
-- [ ] Observe how onSubmit events are used to receive information from Users via forms
-- [ ] Explain the purpose of .preventDefault() method
+    - [ ] Observe how onSubmit events are used to receive information from Users via forms
+    - [ ] Explain the purpose of .preventDefault() method
 - [ ] Use MDN to discover and implement JavaScript events
 
 ## Deliverables 
