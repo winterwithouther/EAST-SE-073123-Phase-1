@@ -1,3 +1,5 @@
+const bookList = document.querySelector('#book-list')
+
 function formatPrice(price) {
   return '$' + Number.parseFloat(price).toFixed(2);
 }
@@ -11,55 +13,65 @@ function renderHeader(bookStore) {
   document.querySelector('#store-name').textContent = bookStore.name;
 }
 
+// render footer
 function renderFooter(bookStore) {
   document.querySelector('#store').textContent = bookStore.location;
   document.querySelector('#number').textContent = bookStore.number;
   document.querySelector('#address').textContent = bookStore.address;
 }
 
-// function: renderBook(book)
-// --------------------------
-// accepts a book object as an argument and creates
-// an li something like this:
-// <li class="list-li">
-//   <h3>Eloquent JavaScript</h3>
-//   <p>Marjin Haverbeke</p>
-//   <p>$10.00</p>
-//   <img src="https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg" alt="Eloquent JavaScript cover"/>
-// </li>
-// appends the li to the ul#book-list in the DOM
-function renderBook(book) {
-    
-  const li = document.createElement('li');
-  li.classNameList = 'list-li card';
-  
-  const h3 = document.createElement('h3');
-  h3.textContent = book.title;
-  li.append(h3);
-
-  const pAuthor = document.createElement('p');
-  pAuthor.textContent = book.author;
-  li.append(pAuthor);
-  
-  const pPrice = document.createElement('p');
-  pPrice.textContent = formatPrice(book.price);
-  li.append(pPrice);
-  
-  const img = document.createElement('img');
-  img.src = book.imageUrl;
-  img.alt = `${book.title} cover`;
-  img.title = `${book.title} cover`;
-  li.append(img);
-
-  const btn = document.createElement('button');
-  btn.textContent = 'Delete';
-  li.append(btn);
-
-  document.querySelector('#book-list').append(li);
+function handleClick(e) {
+  //❔ why doesn't this work?
+  //🛑 li is not in scope, try debugger
+  //🛑 can interact with e to get the parent card node to remove
+  //li.remove()
+  e.target.closest('.card')
+  //❌ e.target.parentElement.parentElement...
 }
 
+// function: renderBook(book)
+function renderBook(book){
+  const li = document.createElement('li')
+  li.className = 'card'
+  const titleNode = document.createElement('h3')
+  const authorNode = document.createElement('p')
+  const priceNode = document.createElement('p')
+  const imgNode = document.createElement('img')
+  const deleteBtn = document.createElement('button')
 
-////////////////////////////////////////////
+  titleNode.textContent = book.title 
+  authorNode.textContent = book.author 
+  priceNode.textContent = formatPrice(book.price)
+  imgNode.src = book.imageUrl 
+  //1. on delete button click, remove card from DOM
+  //🛑 pseudocode, follow setup diagram
+  //❔ will it remove all the cards?
+  //❔ how come this specific instance of addEventListener isn't added to all the cards
+  //🛑 it's a scope thing; li is scoped to renderBook function
+  //🛑 each time we invoke renderBook, 7 li variables are created and only in existance when the function is running
+  //🛑 when function returns (whether it be undefined), the variables get cleaned up
+  //🛑 closure
+  deleteBtn.textContent = 'Delete'
+  //1a. attach eventListener
+
+  deleteBtn.addEventListener('click', (e) => {
+    //1b. write callback function to remove card instance
+    li.remove();
+  })
+  //1c. define cb outside of renderBook
+
+  bookList.append(li)
+  li.append(titleNode)
+  li.append(authorNode)
+  li.append(priceNode)
+  li.append(imgNode)
+  li.append(deleteBtn)
+}
+
+//2. add an submit event listener to the form
+//🛑 demonstrate how to access each form's input value (form.name.value) (form["this-name"].value)
+//🛑 specific to forms - check MDN
+//////////////////////////////////////////// 
 // call render functions to populate the DOM
 ////////////////////////////////////////////
 
