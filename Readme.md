@@ -2,13 +2,13 @@
 ## SWBAT
 - [ ] Explain what the DOM is
 - [ ] Traverse the DOM tree
-- [ ] Select single DOM elements with .querySelector() and -getElementById()
-- [ ] Select multiple elements with .querySelectorAll() and .-getElementsByClassName()
+    - [ ] Select single DOM elements with .querySelector() and .getElementById()
+    - [ ] Select multiple elements with .querySelectorAll() and .getElementsByClassName()
 - [ ] Add content with .textContent
-- [ ] Create elements with .createElement
-- [ ] Append elements to the DOM with .appendChild and .append
+    - [ ] Create elements with .createElement
+    - [ ] Append elements to the DOM with .appendChild and .append
+    - [ ] Remove content with .remove
 - [ ] Explain the dangers of innerHTML and when it's safe to use
-- [ ] Remove content with .remove
 
 ## Deliverables 
 ### Lecture 2
