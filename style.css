@@ -10,6 +10,7 @@
   --box-pressed: rgba(0, 0, 0, 0.25) 0px 2px 1px 0px;
 }
 
+
 html {
   background-image: url('/assets/books.png')
 }
@@ -176,4 +177,24 @@ input[type=number]::-webkit-outer-spin-button {
 
  opacity: 1;
 
+}
+
+/* TRANSITION FOR ONCLICK NEW BOOK */
+
+#book-form, #book-form.collapsed {
+  transition: max-height 200ms ease-in-out, height 200ms ease-in-out;
+
+}
+
+#book-form {
+  max-height: 400px;
+  height: 400px;
+}
+/* allows us to animate a collapsed element appearing after a click  */
+#book-form.collapsed {
+  transition: max-height 200ms ease-in-out, height 200ms ease-in-out;
+  max-height: 0;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
 }

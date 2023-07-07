@@ -1,61 +1,87 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--GOOGLE FONTS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,300;0,400;1,600&family=La+Belle+Aurore&family=Nanum+Myeongjo:wght@400;700&family=Norican&display=swap" rel="stylesheet"> <link rel="stylesheet" href="my-style.css">
-    <!--STYLE SHEET-->
-    <link rel="stylesheet" href="style.css" />
-    <!--JAVASCRIPT-->
-    <script defer src="src/data.js"></script>
-    <script defer src="src/index.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!--GOOGLE FONTS-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,300;0,400;1,600&family=La+Belle+Aurore&family=Nanum+Myeongjo:wght@400;700&family=Norican&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="my-style.css" />
+		<!--STYLE SHEET-->
+		<link rel="stylesheet" href="style.css" />
+		<!--JAVASCRIPT-->
+		<script defer src="src/data.js"></script>
+		<script defer src="src/index.js"></script>
 
-    <title>JS DOM Events</title>
-  </head>
-  <body class="">
-    <div class="list App light" id="header">
-      <header>
-        <h1 id="store-name"></h1>
-        <div id="banner"></div>
-      </header>
-      <main>
-        <div id="form-wrapper">
-          <button id="toggleForm">New Book</button>
-          <form id="book-form" class="collapsed">
-          
-            <form id="book-form" class="form">
-          
-            <!-- <label for="title">Title:</label> -->
-            <input type="text" id="form-title" name="title" placeholder="Title...">
-  
-            <!-- <label for="author">Author:</label> -->
-            <input type="text" id="form-author" name="author" placeholder="Author...">
-          
-            <!-- <label for="price">Price:</label> -->
-            <input type="number" id="form-price" name="price" placeholder="Price...">
-          
-            <!-- <label for="imageUrl">Image url:</label> -->
-            <input type="text" id="form-imageUrl" name="imageUrl" placeholder="Image...">
-          
-            <!-- <label for="inventory">Inventory:</label> -->
-            <input type="number" id="inventory" name="inventory" placeholder="Inventory...">
+		<title>JS DOM Events</title>
+	</head>
+	<body class="">
+		<div class="list App light" id="header">
+      
+			<header>
+				<h1 id="store-name"></h1>
+				<div id="banner"></div>
+			</header>
 
-            <input type="submit" value="ADD BOOK"/>
-          </form>
-      </div>
-        <div class="list">
-          <ul id="book-list">
-          </ul>
-        </div>
-      </main>
-      <footer>
-        <div id="store"></div>
-        <div id="number"></div>
-        <div id="address"></div>
-      </footer>
-    </div>
-  </body>
+			<main>
+				<div id="form-wrapper">
+					<button id="toggleForm" style="margin: 0 auto; display: block">New Book</button>
+					<form id="book-form" class="collapsed">
+						<!-- <label for="title">Title:</label> -->
+						<input
+							type="text"
+							id="form-title"
+							name="title"
+							placeholder="Title..."
+						/>
+						<!-- <label for="author">Author:</label> -->
+						<input
+							type="text"
+							id="form-author"
+							name="author"
+							placeholder="Author..."
+						/>
+						<!-- <label for="price">Price:</label> -->
+						<input
+							type="number"
+							step=0.01
+							id="form-price"
+							name="price"
+							placeholder="Price..."
+						/>
+						<!-- <label for="imageUrl">Image url:</label> -->
+						<input
+							type="text"
+							id="form-imageUrl"
+							name="imageUrl"
+							placeholder="Image..."
+						/>
+						<!-- <label for="inventory">Inventory:</label> -->
+						<input
+							type="number"
+							id="inventory"
+							name="inventory"
+							placeholder="Inventory..."
+						/>
+						<input type="submit" value="ADD BOOK" />
+					</form>
+				</div>
+
+				<div class="list">
+					<ul id="book-list"></ul>
+				</div>
+			</main>
+
+			<footer>
+				<div id="store"></div>
+				<div id="number"></div>
+				<div id="address"></div>
+			</footer>
+
+		</div>
+	</body>
 </html>
