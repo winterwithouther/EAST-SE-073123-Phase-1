@@ -1,13 +1,10 @@
 ---
-theme : "night"
+theme: "night"
 transition: "slide"
 highlightTheme: "monokai"
 slideNumber: false
-title: "P1L4 - Communicating with the Server slides"
-height: 900
-width: 1400
+title: "04_communicate_server"
 ---
-
 
 <style>
 input {
@@ -28,10 +25,17 @@ input {
 - Observe how to send GET requests using `.fetch()`
 - Explain what Asynchronous means in JavaScript
 - Explain why Promises are important in JavaScript
-- Observe: 
+- Observe:
   - Handling promises and errors using `.then()` and `.catch()`
   - Using json-server to create a local API
   - Rendering data to the browser window after a fetch request
+
+<aside class="notes">
+
+- NO NEW FEATURES! <br />
+- instead of loading from JS file, we will retrieve from web server so that we can modify data and have that persist <br />
+- 
+</aside>
 
 ---
 
@@ -43,16 +47,18 @@ input {
 
 <aside class="notes">
 
-Client
-- User interface
-- Responsible for styling, layout, and event functionality
-- Lightweight and loads fast
-- Acts as a “template” for dynamic data 
-- Makes requests to the server
+Client <br />
 
-Server
-- Responsible for data storage and management
-- Changes in data may be triggered by the client, but the actual change is handled by the server-side
+- User interface / browser running on computer<br />
+- Responsible for styling, layout, and event functionality <br />
+- Lightweight and loads fast <br />
+- Acts as a “template” for dynamic data <br />
+- Makes requests to the server (also hooked up to internet) <br />
+
+Server <br />
+
+- Responsible for data storage and management <br />
+- Changes in data may be triggered by the client, but the actual change is handled by the server-side <br />
 - Sends a response back to the server
 
 </aside>
@@ -71,31 +77,37 @@ Server
 
 <aside class="notes">
 
-HTTP is:
-- Language protocol used to communicate between the server and client 
-- Used for fetching resources
-- Data exchange 
-- Readable 
-- Stateless 
-- Has sessions
+HTTP is: <br />
 
-Open devtools in Chrome for the slideshow and demo the network tab.
+- HyperText Transfer Protocol (HTML = HyperText Markup Language) <br />
+- Can have multiple server requests (CDN, google ads, amazon image hosting, etc.)
+- Language protocol used to communicate between the server and client <br />
+- Used for fetching resources <br />
+- Data exchange <br />
+- Readable <br />
+- Stateless <br />
+- Has sessions <br />
+  <br />
+  Open devtools in Chrome for the slideshow and demo the network tab.
 
 </aside>
-
 
 ---
 
 ### HTTP Verbs & CRUD
 
+| Method    | CRUD Action | Description         |
+| --------- | ----------- | ------------------- |
+| GET       | READ        | Retrieves resources |
+| POST      | CREATE      | Creates resources   |
+| PUT/PATCH | UPDATE      | Updates resources   |
+| DELETE    | DESTROY     | Deletes resources   |
 
-Method | CRUD Action | Description
----------|----------|---------
- GET | READ | Retrieves resources
- POST | CREATE | Creates resources
- PUT/PATCH | UPDATE | Updates resources
- DELETE | DESTROY | Deletes resources
-
+ <aside class="notes">
+ - related to request part <br />
+ - sometimes request will send back entire pages of HTML <br />
+ - other times they can send back bits and pieces of data (JSON)
+ </aside>
 
 ---
 
@@ -104,6 +116,36 @@ Method | CRUD Action | Description
   style="width: 1500px; max-width: 100%; height: 900px; max-height: 60%"
 ></iframe>
 
+<aside class="notes">
+
+- status codes, indicates what went on in server and how it went <br />
+- explore some of the status codes with students <br />
+- 400s: errors <br />
+- 200s: good <br />
+- 300s: redirection <br />
+- 500s: server error
+</aside>
+
+---
+
+### JSON (JavaScript Object Notation)
+
+<img 
+  src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1665769374/l7GjO7D3eyP2fDOG1wv6bsiTPWAzeYTlYJk8mCWlCXFpyXbDGVtvezulzA7fQ1---9Vs5GKpPnfAoVjX-QeezNH87M6HHcbVb9NViYGEkMWakQDJBi0k69c5fKeBiBQck5PQup45-dlVsjlc4q8uFeG5tJACZ60nwJ7ywjRjyLg6Zcj7775mBYqAr6BE_nw_m4zhfz.png" 
+  alt="JSON example" 
+  style="width: 80%;"
+/>
+
+<aside class="notes">
+
+JSON is: <br />
+
+- transmit medium, sent/received <br />
+- a lightweight data storage for data exchange <br />
+- it works with any language <br />
+- and it's easy to read <br />
+- different from JS object: keys are surrounded by quotes <br />
+</aside>
 
 ---
 
@@ -121,13 +163,22 @@ Method | CRUD Action | Description
   </div>
   <div style="width: 50%">
 
-  #### Async callbacks
-  - `addEventListener`
-  - `setTimeout`
-  - `Promise.then`
+#### Async callbacks
+
+- `addEventListener`
+- `setTimeout`
+- `Promise.then`
 
   </div>
 </div>
+
+<aside class="notes">
+
+- theory time! <br />
+- sync: runs in order of expressions <br />
+- async: delay, behavior that is saved for later <br />
+- promises are used with requests...see next slide
+</aside>
 
 ---
 
@@ -139,11 +190,12 @@ Method | CRUD Action | Description
 
 <aside class="notes">
 
-- When we order food at a restaurant, the chefs don't wait till one dish is completely ready before starting on the next one. 
-- They take in the orders from the wait staff and complete them with priorities in mind. 
-- They'll finish appetizers first and they may also be dealing with meals ordered by other customers at the same time
-- The restaurant could not function properly if dishes could only be processed one at a time and it would be very awkward for our guests if dishes were delivered one at a time in the same order that they were placed!
-- Whoever ordered first would end up with cold food! :( 
+- don't wait for callback to run, cb will run later <br />
+- When we order food at a restaurant, the chefs don't wait till one dish is completely ready before starting on the next one.<br />
+- They take in the orders from the wait staff and complete them with priorities in mind.<br />
+- They'll finish appetizers first and they may also be dealing with meals ordered by other customers at the same time<br />
+- The restaurant could not function properly if dishes could only be processed one at a time and it would be very awkward for our guests if dishes were delivered one at a time in the same order that they were placed!<br />
+- Whoever ordered first would end up with cold food! :(<br />
 - Instead, orders are handled asynchronously, this means that appetizers can be delivered when they're ready, potentially a couple at a time
 
 </aside>
@@ -156,6 +208,14 @@ Method | CRUD Action | Description
 
 <small>Image source: <a href="https://scoutapm.com/blog/async-javascript" rel="noopener noreferrer" target="_blank">Scout APM</a></small>
 
+<aside class="notes">
+
+- SHOW IN NETWORK TAB
+- browser can do multiple things at the same time
+- JS cannot do multiple things at a time, only does one task at a time
+- things in background and pass callback which is async that will run when task is done
+</aside>
+
 ---
 
 ### A Demo of Sync & Async code in practice
@@ -167,39 +227,59 @@ Method | CRUD Action | Description
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
+<aside class="notes">
+
+- run through code <br />
+- prioritizes synchronous code, always going to run first <br />
+
+</aside>
+
 ---
 
 ### Promises
 
 <img src="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/promises.png" alt="Promise Diagram" width="90%" />
 
-* <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" rel="noopener noreferrer" target="_blank">MDN - Promise</a> * <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" rel="noopener noreferrer" target="_blank">MDN - Using Fetch</a>
-
----
-
-### JSON (JavaScript Object Notation)
-
-<img 
-  src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1665769374/l7GjO7D3eyP2fDOG1wv6bsiTPWAzeYTlYJk8mCWlCXFpyXbDGVtvezulzA7fQ1---9Vs5GKpPnfAoVjX-QeezNH87M6HHcbVb9NViYGEkMWakQDJBi0k69c5fKeBiBQck5PQup45-dlVsjlc4q8uFeG5tJACZ60nwJ7ywjRjyLg6Zcj7775mBYqAr6BE_nw_m4zhfz.png" 
-  alt="JSON example" 
-  style="width: 80%;"
-/>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" rel="noopener noreferrer" target="_blank">MDN - Promise</a> \* <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" rel="noopener noreferrer" target="_blank">MDN - Using Fetch</a>
 
 <aside class="notes">
 
-JSON is:
-- a lightweight data storage for data exchange 
-- it works with any language 
-- and it's easy to read
+- every promise starts in pending state <br />
+- promise is settled after being either fulfilled or rejected <br />
+- when fulfilled: promise will resolve to .then's return value <br />
+- visit MDN 'using fetch' guide to see example and read description.... <br />
+- check out response page <br />
+
+</aside>
+
+
+---
+
+## For Our Application 
+
+<img src="fetch_flow.png" width="90%" />
+
+<aside class="notes">
+
+- won't always get JSON back (ex. HTML, blob (binary large object: audio, video), text, form)
 
 </aside>
 
 ---
 
-## Mocking the server with 
+
+## Mocking the server with
+
 ## json-server
 
 <img src="https://media.giphy.com/media/3oKHW5ygEPHUNrb1SM/giphy.gif" alt="Spongebob delivering a Krabby Patty" />
+
+<aside class="notes">
+
+- not real server <br />
+- will be creating real server in phase 3 and 4
+
+</aside>
 
 ---
 
@@ -241,7 +321,7 @@ npm install -g json-server
   </div>
   <div style="width: 50%">
 
-  ### Demo
+### Demo
 
   </div>
 </div>
@@ -253,14 +333,17 @@ npm install -g json-server
 cd 04_Communicating_with_the_Server/assets
 touch db.json
 ```
+
 <small>copy and paste the below into the assets/db.json file:</small>
 
 ```json
 {
-  "posts": [
-    { title: "JSON-server is really cool" },
-    { title: "JSON-server allows you to mock an API server by creating a single file!"}
-  ]
+	"posts": [
+		{ "title": "JSON-server is really cool" },
+		{
+			"title": "JSON-server allows you to mock an API server by creating a single file!"
+		}
+	]
 }
 ```
 
@@ -272,13 +355,13 @@ json-server --watch db.json
   src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1665769655/Screen_Shot_2022-10-14_at_10.22.25_AM_eqxe9c.png"
   alt="JSON server running in terminal"
 />
-    
+
   </div>
   <div style="width: 50%; display: flex; flex-direction: column; justify-content: center">
 
-  Visit <a href="http://localhost:3000/posts" target="_blank">http://localhost:3000/posts</a>
+Visit <a href="http://localhost:3000/posts" target="_blank">http://localhost:3000/posts</a>
 
-  <img
+<img
     src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1665767313/Screen_Shot_2022-10-14_at_10.06.57_AM_rk6pgk.png"
     alt="json-server in action"
     style="width: 100%"
@@ -295,7 +378,7 @@ json-server --watch db.json
 
 <img src="https://media.giphy.com/media/BZhvKu7MT0n2voRhtf/giphy.gif" alt="Woman in plug running and jumping into an outlet" />
 
-- If you run `json-server --watch db.json`, then your terminal will need to be in the same working directory as the db.json file. 
+- If you run `json-server --watch db.json`, then your terminal will need to be in the same working directory as the db.json file.
 
 ---
 
@@ -313,7 +396,7 @@ Some error occurred Error: listen EADDRINUSE: address already in use 127.0.0.1:3
 kill $(lsof -t -i:3000)
 ```
 
-#### Regimen 
+#### Regimen
 
 ```
 alias k3000="kill $(lsof -t -i:3000)"
