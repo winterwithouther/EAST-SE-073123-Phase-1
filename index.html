@@ -14,7 +14,10 @@
 		<!--STYLE SHEET-->
 		<link rel="stylesheet" href="style.css" />
 		<!--JAVASCRIPT-->
-		<script defer src="src/data.js"></script>
+		<script defer src="src/render.js"></script>
+		<script defer src="src/request_helpers.js"></script>
+		<script defer src="src/events.js"></script>
+		<script defer src="src/testing.js"></script>
 		<script defer src="src/index.js"></script>
 
 		<title>JS DOM Events</title>
@@ -24,12 +27,39 @@
       
 			<header>
 				<h1 id="store-name"></h1>
+				<select id="store-selector">
+					<option value="" disabled selected>Select your store</option>
+				</select>
 				<div id="banner"></div>
 			</header>
-
+			
 			<main>
 				<div id="form-wrapper">
-					<button id="toggleForm" style="margin: 0 auto; display: block">New Book</button>
+					<button id="toggle-store-form" style="margin: 0 auto; display: block">New Store</button>
+					<form id="store-form" class="collapsed">
+						<input
+							type="text"
+							id="form-name"
+							name="name"
+							placeholder="Name..."
+						/>
+						<input
+							type="text"
+							id="form-location"
+							name="location"
+							placeholder="Location..."
+						/>
+						<input
+							type="text"
+							id="form-number"
+							name="number"
+							placeholder="Phone number..."
+						/>
+						<input type="submit" value="Add Store" />
+					</form>
+				</div>
+				<div id="form-wrapper">
+					<button id="toggle-form" style="margin: 0 auto; display: block">New Book</button>
 					<form id="book-form" class="collapsed">
 						<!-- <label for="title">Title:</label> -->
 						<input
@@ -67,7 +97,7 @@
 							name="inventory"
 							placeholder="Inventory..."
 						/>
-						<input type="submit" value="ADD BOOK" />
+						<input type="submit" value="Add Book" />
 					</form>
 				</div>
 

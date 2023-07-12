@@ -120,7 +120,7 @@ title: "05_post_request"
 This happens consistently as we send fetch requests, so we'll end up typing a lot of boilerplate each time–especially when we want to add a catch to our fetch call. {.fragment}
 
 <aside class="notes">
-- if response is error code, its still considered a fulfilled promise (which doesn't help us with error handling)
+- if response is error code, its still considered a fulfilled promise (which doesn't help us with error handling)...put fetch statements in boiler plate functions
 </aside>
 
 
@@ -157,5 +157,15 @@ function postJSON(url, data) {
 }</code></pre>
 
 <aside class="notes">
-
+- check if response is ok <br />
+- thrown error will be caught <br />
+- throw...catch... are used together <br />
+- located in src/request_helpers.js
 </aside>
+
+---
+
+## Let's Code
+
+1. Submit store form -> update DOM (select dropdown)
+2. Submit book form -> update DOM -> add to database
