@@ -28,12 +28,15 @@ Extension | Description |
 [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) | auto format HTML, JSON, CSS, JS, etc.
 [HTML Boilerplate](https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate) | create html boilerplate 
 [Console Ninja](https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja) | displays console.log output and runtime errors directly in your editor from your running browser
+[Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) | run REST API calls in VSCode
+
 </div>
 
 <aside class="notes">
 - Show how to do tab extensions <br />
 - Tabnine also autocompletes based on what's already in the code (function, var names) <br />
-- Be sparing of autocomplete, important to type things out to get used to them
+- Be sparing of autocomplete, important to type things out to get used to them <br />
+- Thunder Client - similar to Postman but in VSCode, we will use this later 
 </aside>
 
 ---
