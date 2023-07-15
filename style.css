@@ -10,6 +10,9 @@
   --box-pressed: rgba(0, 0, 0, 0.25) 0px 2px 1px 0px;
 }
 
+ul {
+  padding-left: 0;
+}
 
 html {
   background-image: url('/assets/books.png')
@@ -22,6 +25,10 @@ body {
   background-color: var(--white);
   color: var(--green);
   font-weight:900;
+}
+
+main {
+  margin-top: 50px;
 }
 
 button, select {

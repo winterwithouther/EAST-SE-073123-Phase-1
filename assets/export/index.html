@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>P1L6 - PATCH &amp; DELETE Requests slides</title>
+  <title>06_patch_delete</title>
 
   <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
   <meta name="author" content="Hakim El Hattab">
@@ -16,6 +16,8 @@
 
   <link rel="stylesheet" href="libs/reveal.js/4.3.1/reset.css">
   <link rel="stylesheet" href="libs/reveal.js/4.3.1/reveal.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <!-- highlight Theme -->
   
@@ -49,10 +51,15 @@
 
    <!-- css list -->
 	
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  
 
    
+<style>
+  :root {
+     --r-main-font-size: 24px;
+        
+  }
+</style>
+
 
 </head>
 
@@ -87,7 +94,8 @@
 <li>Review how to send a DELETE request using HTML buttons and JavaScript</li>
 <li>Explain the difference between optimistic and pessimistic rendering</li>
 </ul>
-
+<aside class="notes">
+</aside>
             </section>
     
 
@@ -101,7 +109,10 @@
   alt="Fetch Diagram for Delete"
   style="width: 90%"
 /></p>
-
+<aside class="notes">
+- not sending anything in body, not expecting anything in body <br />
+- Q&A: how is json-server going to know what to delete?
+</aside>
             </section>
     
 
@@ -115,7 +126,11 @@
   alt="Fetch Diagram for Patch"
   style="width: 90%"
 /></p>
-
+<aside class="notes">
+- very similar to POST <br />
+- what are we doing differently with DOM for PATCH vs POST? (for PATCH we aren't creating any new elements) <br />
+- we could also just rebuild whole page (refetch everything) after PATCH
+</aside>
             </section>
     
 
@@ -129,7 +144,8 @@
   alt="Diagram comparing renderBook with updateBook"
   style="width: 90%"
 /></p>
-
+<aside class="notes">
+</aside>
             </section>
     
 
@@ -182,7 +198,7 @@ function addLike(comment) {
 
 function likeButtonTextFor(comment) {
   return `${comment.likes} like${comment.likes === 1 ? '' : 's'} `
-}</code></pre>
+} </code></pre>
 <p><button id="refreshList">Click to Refresh List</button></p>
 <ul id="comments">
 </ul>
@@ -229,6 +245,24 @@ function likeButtonTextFor(comment) {
 }
 
 </script>
+<aside class="notes">
+- cd into assets to get working and start json-server <br />
+- due to (stale) closures, buttons only work once <br />
+- See MDN: "closure is combo of a fxn bundled (enclosed) with references to is surrounding state (lexical environment) <br />
+- closure gives inner fxn access to outer scope <br />
+</aside>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Fixing Closure Issues</h2>
+<img src="./closure-fix.png" />
+<aside class="notes">
+</aside>
             </section>
     
 
@@ -320,7 +354,7 @@ function likeButtonTextFor(comment) {
       //#keyboardCondition: null,
       overview: true,
       center: true,
-      touch: true,
+      touch: false,
       loop: false,
       rtl: false,
       //#navigationMode: 'default', linear grid
@@ -367,9 +401,9 @@ function likeButtonTextFor(comment) {
       parallaxBackgroundVertical: 0,
 
       //Presentation Size
-      width: 1400,
-			height: 900,
-			margin: 0.04,
+      width: 960,
+			height: 700,
+			margin: 0.01,
       minScale: 0.2,
       maxScale: 2,
       disableLayout: false,

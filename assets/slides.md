@@ -1,11 +1,10 @@
 ---
+
 theme : "night"
 transition: "slide"
 highlightTheme: "monokai"
 slideNumber: false
-title: "P1L6 - PATCH & DELETE Requests slides"
-height: 900
-width: 1400
+title: "06_patch_delete"
 ---
 
 ## PATCH & DELETE Requests
@@ -18,6 +17,9 @@ width: 1400
 - Review how to send a DELETE request using HTML buttons and JavaScript
 - Explain the difference between optimistic and pessimistic rendering
 
+<aside class="notes">
+</aside>
+
 ---
 
 <img 
@@ -25,6 +27,11 @@ width: 1400
   alt="Fetch Diagram for Delete"
   style="width: 90%"
 />
+
+<aside class="notes">
+- not sending anything in body, not expecting anything in body <br />
+- Q&A: how is json-server going to know what to delete?
+</aside>
 
 ---
 
@@ -34,6 +41,12 @@ width: 1400
   style="width: 90%"
 />
 
+<aside class="notes">
+- very similar to POST <br />
+- what are we doing differently with DOM for PATCH vs POST? (for PATCH we aren't creating any new elements) <br />
+- we could also just rebuild whole page (refetch everything) after PATCH
+</aside>
+
 ---
 
 <img
@@ -41,6 +54,9 @@ width: 1400
   alt="Diagram comparing renderBook with updateBook"
   style="width: 90%"
 />
+
+<aside class="notes">
+</aside>
 
 ---
 
@@ -91,7 +107,7 @@ function addLike(comment) {
 
 function likeButtonTextFor(comment) {
   return `${comment.likes} like${comment.likes === 1 ? '' : 's'} `
-}</code></pre>
+} </code></pre>
 
 <button id="refreshList">Click to Refresh List</button>
 <ul id="comments">
@@ -141,3 +157,19 @@ function likeButtonTextFor(comment) {
 }
 
 </script>
+
+<aside class="notes">
+- cd into assets to get working and start json-server <br />
+- due to (stale) closures, buttons only work once <br />
+- See MDN: "closure is combo of a fxn bundled (enclosed) with references to is surrounding state (lexical environment) <br />
+- closure gives inner fxn access to outer scope <br />
+</aside>
+
+---
+
+## Fixing Closure Issues
+
+<img src="./closure-fix.png" />
+
+<aside class="notes">
+</aside>

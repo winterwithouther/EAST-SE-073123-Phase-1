@@ -42,12 +42,17 @@ function renderBook(book) {
 	const priceNode = document.createElement("p");
 	const imgNode = document.createElement("img");
 	const deleteBtn = document.createElement("button");
+	const pInventory = document.createElement('input')
+
 
 	li.className = "card";
 	titleNode.textContent = book.title;
 	authorNode.textContent = book.author;
 	priceNode.textContent = formatPrice(book.price);
 	imgNode.src = book.imageUrl;
+	pInventory.type = 'number'
+    pInventory.value = book.inventory
+
 
 	deleteBtn.textContent = "Delete";
 	deleteBtn.addEventListener("click", (e) => {
@@ -59,6 +64,7 @@ function renderBook(book) {
 	li.append(authorNode);
 	li.append(priceNode);
 	li.append(imgNode);
+	li.append(pInventory);
 	li.append(deleteBtn);
 	const pStock = document.createElement("p");
 	pStock.className = "grey";
