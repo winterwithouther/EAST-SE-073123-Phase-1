@@ -5,6 +5,7 @@ transition: "slide"
 highlightTheme: "monokai"
 slideNumber: false
 title: "06_patch_delete"
+
 ---
 
 ## PATCH & DELETE Requests
@@ -163,6 +164,9 @@ function likeButtonTextFor(comment) {
 - due to (stale) closures, buttons only work once <br />
 - See MDN: "closure is combo of a fxn bundled (enclosed) with references to is surrounding state (lexical environment) <br />
 - closure gives inner fxn access to outer scope <br />
+- when dealing with async, don't know exactly when fxns are called but they will be called later <br />
+- addLike cb is referencing the comment variable in function scope of renderComment -> the closure surrounding comment allows addLike to run with same comment object -> that object's likes is always at 22 and we never update it to the incremented number <br />
+- comment object is now stale, it has not been updated; comment.likes + 1 does not set comment.likes (do comment.likes += 1, this will update in database and in closure)
 </aside>
 
 ---
@@ -172,4 +176,20 @@ function likeButtonTextFor(comment) {
 <img src="./closure-fix.png" />
 
 <aside class="notes">
+- when updating, update in db.json AND update in browser <br />
+</aside>
+
+---
+
+## Let's Code 🐒
+
+### 1. updating a store using the store form
+### 2. delete a book
+### 3. update the inventory for a book 
+
+<aside class="notes">
+- new: <br />
+- editStoreBtn (button), storeEditMode (toggles to say whether store form is for new store or edit store) <br />
+- populateStoreEditForm(store), fillIn(form, data): helper functions to fill in form <br />
+- events.js: toggleStoreForm, hideStoreForm, showStoreForm: contains additional logic to update global variables determining new or edit state
 </aside>
