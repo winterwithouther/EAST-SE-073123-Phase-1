@@ -10,38 +10,7 @@ title: "01_function_scope"
 
 # Functions and Scope
 
-
 ---
-
-<div style="font-size: 0.75em">
-
-### My Setup
-
-##### VSCode extensions:
-
-Extension | Description |
----------|----------|
-[Draw.io Integation](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) | for making diagrams from within VSCode 
-[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) | for opening a webpage in the browser that will reload when the code is saved 
-[vscode-reveal](https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal) | for opening the slide.md files in the browser to display slideshows
-[Tabnine AI Autocomplete](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode) | for code completion suggestions based on context
-[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) | auto format HTML, JSON, CSS, JS, etc.
-[HTML Boilerplate](https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate) | create html boilerplate 
-[Console Ninja](https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja) | displays console.log output and runtime errors directly in your editor from your running browser
-[Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) | run REST API calls in VSCode
-
-</div>
-
-<aside class="notes">
-- Show how to do tab extensions <br />
-- Tabnine also autocompletes based on what's already in the code (function, var names) <br />
-- Be sparing of autocomplete, important to type things out to get used to them <br />
-- Thunder Client - similar to Postman but in VSCode, we will use this later 
-</aside>
-
----
-
-
 
 #### Guidelines
 
@@ -80,6 +49,34 @@ Extension | Description |
 
 ---
 
+<div style="font-size: 0.75em">
+
+### My Setup
+
+##### VSCode extensions:
+
+Extension | Description |
+---------|----------|
+[Draw.io Integation](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio) | for making diagrams from within VSCode 
+[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) | for opening a webpage in the browser that will reload when the code is saved 
+[vscode-reveal](https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal) | for opening the slide.md files in the browser to display slideshows
+[Tabnine AI Autocomplete](https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode) | for code completion suggestions based on context
+[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) | auto format HTML, JSON, CSS, JS, etc.
+[HTML Boilerplate](https://marketplace.visualstudio.com/items?itemName=sidthesloth.html5-boilerplate) | create html boilerplate 
+[Console Ninja](https://marketplace.visualstudio.com/items?itemName=WallabyJs.console-ninja) | displays console.log output and runtime errors directly in your editor from your running browser
+[Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) | run REST API calls in VSCode
+
+</div>
+
+<aside class="notes">
+- Show how to do tab extensions <br />
+- Tabnine also autocompletes based on what's already in the code (function, var names) <br />
+- Be sparing of autocomplete, important to type things out to get used to them <br />
+- Thunder Client - similar to Postman but in VSCode, we will use this later 
+</aside>
+
+---
+
 ## Lecture Goals
 
 - Describe what functions are
@@ -113,7 +110,6 @@ Extension | Description |
 </aside>
 
 ---
-
 
 <div style="font-size: 0.75em">
 
@@ -172,7 +168,6 @@ Function | Parameters | Behavior
 - if we use CB solely for that higher-order function, we may be able to define it anonymously
 </aside>
 
-
 ---
 
 
@@ -182,8 +177,6 @@ Function | Parameters | Behavior
 
 <aside class="notes">
 </aside>
-
-
 
 ---
 
@@ -203,14 +196,11 @@ Function | Parameters | Behavior
 - where you define variable determines its scope <br />
 </aside>
 
-
-
 ---
 
 <div style="font-size: 0.75em">
 
 ### Links!
-
 
 Resource | Location | Description
 ---------|----------|---------
