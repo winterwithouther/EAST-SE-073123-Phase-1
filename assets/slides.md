@@ -91,6 +91,33 @@ width: 1400
 
 ---
 
+### Reddit 
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Reddit_is_killing_third-party_applications.svg/440px-Reddit_is_killing_third-party_applications.svg.png" />
+
+<aside class="notes">
+- reddits API used to be free so three were a lot of third party clients (apollo) <br />
+- they started charging (supposedly because of AI) <br />
+- charging for API caused Apollo to cease development causing protests <br />
+https://en.wikipedia.org/wiki/2023_Reddit_API_controversy
+</aside>
+
+---
+
+### TV API Tour
+https://www.tvmaze.com/api
+
+<aside class="notes">
+- if docs don't make you feel comfortable you probs shouldn't use the API <br />
+- notice the description!!! <br />
+- endpoint is after the URL <br />
+- explore the documentation for the search endpoint <br />
+- search tvmaze API in browser (use API endpoint) <br />
+- review structure of URL, including queries (?), and variables (:id)
+</aside>
+
+---
+
 ### Google Books API Checklist (part 1) - Creating your Project and API key
 
 - [Read the docs for Using the API](https://developers.google.com/books/docs/v1/using) {.fragment}
@@ -99,7 +126,10 @@ width: 1400
 - Click on the Create Credentials button and select API key. {.fragment}
 
 <aside class="notes">
-
+1. API key is enough for public data in google books <br />
+2. only follow the API key instructions <br />
+3. need to create project to specify which APIs / features for specific current project <br />
+4. if multiple projects, need different billing/traffic/credentials/permissions/etc. 
 </aside>
 
 ---
@@ -131,6 +161,8 @@ width: 1400
 - <b>Make sure to tell git to ignore this file!</b> {.fragment}
 
 <aside class="notes">
+- CREATE SEPARATE FILE FOR KEY <br />
+- create keys.js
 </aside>
 
 ---

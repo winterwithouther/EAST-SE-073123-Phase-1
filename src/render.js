@@ -1,5 +1,5 @@
 /* helper function to format the price of a book */
-function priceFormatter(price) {
+function formatPrice(price) {
 	let formattedPrice = Number(price).toFixed(2);
 	return `$${formattedPrice}`;
 }
@@ -38,11 +38,11 @@ function renderBook(book) {
 	deleteBtn.textContent = "Delete";
 	deleteBtn.addEventListener("click", (e) => {
 		fetch(`${url}/books/${book.id}`, {
-			method: "DELETE"
+			method: "DELETE",
 		})
 			.then((res) => {
 				if (res.ok) {
-					li.remove(); 
+					li.remove();
 				} else {
 					renderError("no delete :(");
 				}
@@ -87,3 +87,53 @@ function renderBook(book) {
 
 	return li;
 }
+
+
+/*
+*
+* Below helper functions will create an element with properties
+* Usage: 
+*
+* createElement("img", {
+* 	src: firstEpisode.image.original,
+*	width: "400",
+* })
+*
+*/
+
+/* helper function to iterate over key value pairs or properties and assign to element */
+function assignElementProperties(element, properties) {
+	// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+	for (const [property, value] of Object.entries(properties)) {
+		assignPropertyValue(element, property, value);
+	}
+}
+
+/* helper function to assign one property to one value for element */
+function assignPropertyValue(element, property, value) {
+	if (isEventListener(property)) { //if onSomeEvent, its an event listener
+		element.addEventListener(extractEventType(property), value);
+		return;
+	}
+	element[property] = value;
+}
+
+/* returns true if property starts with 'on' (therefore it is an event listener) */
+function isEventListener(property) {
+	return property.slice(0, 2) === "on";
+}
+
+/* extracts event string from property (e.g. onSomeEvent => someevent) */
+function extractEventType(property) {
+	return property.slice(2).toLowerCase();
+}
+
+/* create an element based on tagName with properties (e.g. name, placeholder, etc) */
+function createElement(tagName, properties) {
+	const el = document.createElement(tagName);
+	assignElementProperties(el, properties);
+	return el;
+}
+
+
+

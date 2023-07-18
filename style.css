@@ -67,7 +67,7 @@ h1 {
 }
 
 
-#book-form, #store-form {
+#book-form, #store-form, #search-form {
   max-width: 500px;
   /* min-width: 400px; */
   display: grid;
@@ -78,7 +78,7 @@ h1 {
   margin: 60px auto;
 }
 
-#book-form input[type="submit"], #store-form input[type="submit"]{
+#book-form input[type="submit"], #store-form input[type="submit"], #search-form input[type="submit"]{
   /* grid-column-start: 1;
   grid-column-end: 3; */
   font-family: var(--script-font);
@@ -90,7 +90,7 @@ h1 {
   background-color: white;
   box-shadow: var(--box-raised);
 }
-#book-form input[type="submit"]:hover, #store-form input[type="submit"]:hover {
+#book-form input[type="submit"]:hover, #store-form input[type="submit"]:hover, #search-form input[type="submit"]:hover {
   /* background-color: var(--green);
   color: var(--white); */
   box-shadow: var(--box-pressed);
@@ -98,7 +98,7 @@ h1 {
   transition: all .1s;
 }
 
-#book-form input, #store-form input {
+#book-form input, #store-form input, #search-form input {
   margin-bottom: 15px;
   background-color: white;
   padding: 5px;
@@ -226,4 +226,10 @@ max-height: 300px;
   height: 0;
   overflow: hidden;
   padding: 0;
+}
+
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
