@@ -3,7 +3,7 @@ theme : "night"
 transition: "slide"
 highlightTheme: "monokai"
 slideNumber: false
-title: "P1L7 - Communicating with External APIs slides"
+title: "07_external_apis"
 height: 900
 width: 1400
 ---
@@ -19,6 +19,10 @@ width: 1400
 -  Observe how to parse API documentation
 -  Observe how to send a GET request to an external API with / without an API key
 
+<aside class="notes">
+- no API key will make life much easier
+</aside>
+
 ---
 
 ### The Restaurant Analogy
@@ -31,6 +35,13 @@ width: 1400
 
 <small>[https://medium.com/vody-techblog/understanding-what-apis-are-all-about-ff2513b76a55](https://medium.com/vody-techblog/understanding-what-apis-are-all-about-ff2513b76a55)</small>
 
+<aside class="notes">
+- API: application programming interface <br />
+- web server -> requests -> data <br />
+- API is between requests and responses <br />
+- menu = documentation 
+</aside>
+
 ---
 
 ### Downsides of External APIs
@@ -40,6 +51,11 @@ width: 1400
   alt="Out of control"
   width="50%"
 />
+
+<aside class="notes">
+- no control over API's capabilities <br />
+- if API doesn't support what you want to do, you will need a different API
+</aside>
 
 ---
 
@@ -51,6 +67,10 @@ width: 1400
   width="50%"
 />
 
+<aside class="notes">
+- you can just put the URL in and you get all the info needed <br />
+- going to show how to read docs
+</aside>
 
 ---
 
@@ -59,6 +79,15 @@ width: 1400
 - <a href="https://www.tvmaze.com/api" target="_blank">TVMaze API</a>
 - <a href="https://developers.google.com/books/docs/overview" target="_blank">Google Books API</a>
 - <a href="https://github.com/toddmotto/public-apis" target="_blank">List of Publicly accessible APIs</a>
+
+<aside class="notes">
+- https://github.com/toddmotto/public-apis for public apis <br />
+- if key, need to keep API private <br />
+- if sending fetch from front end/client side you can't keep key private and someone can see/steal it, to keep private wait until phase 3 <br />
+- look through and show Auth column (no is easy because don't need any security): often connected to rate limit or your account or credit cards (charged if exceeding rate limit) <br />
+- oAuth: e.g. sign in with google/facebook; allow user to access application from another app - however Google Books has public info  <br />
+- no safe way to keep security private
+</aside>
 
 ---
 
@@ -69,7 +98,9 @@ width: 1400
 - Click on the Dropdown near the top of the page (to the right of the Google Cloud logo) to create a new project. I'm calling mine Books Project. {.fragment}
 - Click on the Create Credentials button and select API key. {.fragment}
 
+<aside class="notes">
 
+</aside>
 
 ---
 
@@ -79,6 +110,9 @@ width: 1400
 - Click the sidebar option for: Enable APIs and Services {.fragment}
 - In the search input at the top, type: Books API and select it from the Marketplace search results {.fragment}
 - Click the blue enable button to allow your API key to access the Books API {.fragment}
+
+<aside class="notes">
+</aside>
 
 ---
 
@@ -96,6 +130,9 @@ width: 1400
 - add the API key to a local file in your project. (`const API_KEY="paste_your_key_here"`) {.fragment}
 - <b>Make sure to tell git to ignore this file!</b> {.fragment}
 
+<aside class="notes">
+</aside>
+
 ---
 
 ### .gitignore
@@ -105,6 +142,9 @@ width: 1400
 - in our case, add `src/keys.js` on its own line within this file. {.fragment}
 - ✅⁇: check your version control tab within VSCode and make sure you <b>don't</b> see your `keys.js` file there. If you do, then check for a mismatch between what you have in your `.gitignore` and the name/path to the `keys.js` file. {.fragment}
 - ✅ When keys.js <b>doesn't appear</b> in the list of files with untracked changes, you've done this step correctly. {.fragment}
+
+<aside class="notes">
+</aside>
 
 ---
 
@@ -124,3 +164,6 @@ fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURI(query)}&key=${A
   .then(res =>res.json())
   .then(console.log);
 ```
+
+<aside class="notes">
+</aside>
