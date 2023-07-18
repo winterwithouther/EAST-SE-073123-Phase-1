@@ -1,4 +1,10 @@
-//1. start json-server, examine data structure
+/* CONSTANTS */
+const bookList = document.querySelector("#book-list"); //container for individual book cards
+const toggleBookFormButton = document.querySelector('#toggleForm') //button to open and close form
+const bookForm = document.querySelector('#book-form'); //book form
+
+
+//✅ 1. start json-server, examine data structure
 //🛑 check /stores and /books and /comments
 //🛑 show status codes in terminal
 //🛑 pull up docs for json-server to reference
@@ -7,8 +13,8 @@
 ///////////////////////////////
 // communicating with server //
 ///////////////////////////////
-//2. fetch request to get all books
-//2a. save the base url as a const (to reuse later)
+//✅ 2. fetch request to get all books
+//✅ 2a. save the base url as a const (to reuse later)
 const url = "http://localhost:3000"
 fetch(`${url}/books`)
 .then(res => {
@@ -19,7 +25,7 @@ fetch(`${url}/books`)
 })
 .then(books => {
   console.log(books)
-  //2b. render books from database instead of from data.js
+  //✅ 2b. render books from database instead of from data.js
   //🛑 demonstrate changes in .json reflect on site, .js is hardcoded
   //🛑 note we haven't updated DOM, have to refresh
   books.forEach(book => renderBook(book))
@@ -38,53 +44,52 @@ request.then(res => {
 //debugger
 
 
-//3. use db.json to get information about the store
-//3a. make a fetch request
+//✅ 3. use db.json to get information about the store
+//✅ 3a. make a fetch request
 fetch(`${url}/stores/1`)
 .then(res => {
-  //🛑 JSON is a transmit medium (string in JSON format), 
-  // just as blob is a transmit medium for audio/video of zoom call
+  //🛑 JSON is a transmit medium (string in JSON format) just as blob is a transmit medium for audio/video of zoom call
   return res.json() 
 })
 .then(store => {
-  //3b. use data to update DOM
+  //✅ 3b. use data to update DOM
   renderHeader(store)
   renderFooter(store)
 })
-//3c. add a .catch for errors
+//✅ 3c. add a .catch for errors
 .catch(err => {
   //🛑 force catch to run by not returning res.json()/closing json-server
   //🛑 add catch to fetch /books
   document.querySelector('#address').textContent = "something went wrong";
 })
 
+/**
+ * 
+ * 
+ *OLD BUSINESS
+ *
+ * 
+ */
 
-
-
-
-
-
-//////////////////////
-// render functions //
-//////////////////////
+/* helper function to format the price of a book */
 function formatPrice(price) {
   return '$' + Number.parseFloat(price).toFixed(2);
 }
 
+/* adds name of bookstore to header */
 function renderHeader(bookStore) {
   document.querySelector('#store-name').textContent = bookStore.name;
 }
 
+/* adds details of bookstore to footer */
 function renderFooter(bookStore) {
   document.querySelector('#address').textContent = bookStore.address;
   document.querySelector('#number').textContent = bookStore.number;
   document.querySelector('#store').textContent = bookStore.location;
 }
 
-// function: renderBook(book)
-const bookList = document.querySelector("#book-list");
+/* renders one book object as card*/
 function renderBook(book) {
-    
   const li = document.createElement("li");
 	const titleNode = document.createElement("h3");
 	const authorNode = document.createElement("p");
@@ -109,6 +114,7 @@ function renderBook(book) {
 	li.append(priceNode);
 	li.append(imgNode);
 	li.append(deleteBtn);
+  //logic to display in or out of stock
   const pStock = document.createElement('p');
   pStock.className = "grey";
   if (book.inventory === 0) {
@@ -121,14 +127,15 @@ function renderBook(book) {
   li.append(pStock);
 }
 
-////////////////////////////////////////////////////////////////
-// Event Listeners/Handlers (Behavior => Data => Display) //////
-////////////////////////////////////////////////////////////////
+/*
+*
+*
+* event listeners and render on DOM content loaded
+*
+*
+*/
 
-const toggleBookFormButton = document.querySelector('#toggleForm')
-const bookForm = document.querySelector('#book-form');
-
-// function to toggle classes 
+/*  on click helper function: toggles collapsed class on form */
 function toggleBookForm() {
   const bookFormHidden = bookForm.classList.toggle('collapsed');
   if (bookFormHidden) {
@@ -138,12 +145,12 @@ function toggleBookForm() {
   }
 }
 
-// hide and show the new book form when toggle buton is clicked
+/* on click event using helper function to toggle collapsed class on form */
 toggleBookFormButton.addEventListener('click', (e) => {
   toggleBookForm();
 });
 
-// handle submitting new book form
+/* submit event listener for book form */
 bookForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const book = {
@@ -159,13 +166,9 @@ bookForm.addEventListener('submit', (e) => {
   renderBook(book); // display new book to DOM
 })
 
-///////////////////////////////////////////////
-// call render functions to populate the DOM //
-///////////////////////////////////////////////
-
 renderHeader(bookStore)
-//renderFooter(bookStore)
-//bookStore.inventory.forEach(renderBook)
+renderFooter(bookStore)
+bookStore.inventory.forEach(renderBook)
 
 
 
