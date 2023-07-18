@@ -1,4 +1,4 @@
-// function to toggle classes
+/*  on click helper function: toggles collapsed class on form */
 function toggleBookForm() {
 	const bookFormHidden = bookForm.classList.toggle("collapsed");
 	if (bookFormHidden) {
@@ -8,6 +8,7 @@ function toggleBookForm() {
 	}
 }
 
+/*  on click helper function: toggles collapsed class on form */
 function toggleStoreForm() {
 	const storeFormHidden = storeForm.classList.toggle("collapsed");
 	if (storeFormHidden) {

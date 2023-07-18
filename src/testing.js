@@ -1,4 +1,4 @@
-// fill in a form's with the data in an object
+/* helper function to fill store form fields with data for testing */
 function fillStore(form, data) {
 	for (field in data) {
 		// use [] notation for accessing data stored
@@ -9,6 +9,7 @@ function fillStore(form, data) {
 	}
 }
 
+/* helper function to fill book form fields with data for testing */
 function fillBook(form, data){
 	form.title.value = data.title
 	form.author.value = data.author 

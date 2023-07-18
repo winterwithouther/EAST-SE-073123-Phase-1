@@ -1,8 +1,19 @@
+/* helper function to format the price of a book */
 function formatPrice(price) {
 	return "$" + Number.parseFloat(price).toFixed(2);
 }
 
-//render store option for dropdown
+/* helper function to add a single store to select store dropdown */
+function addSelectOptionForStore(store) {
+	const option = document.createElement("option");
+	// the option value will appear within e.target.value
+	option.value = store.id;
+	// the options textContent will be what the user sees when choosing an option
+	option.textContent = store.name;
+	storeSelector.append(option);
+}
+
+/* render list of stores to select from */
 function renderStoreSelectionOptions(stores) {
 	storeSelector.innerHTML = "";
 	stores.forEach(addSelectOptionForStore);
@@ -14,26 +25,19 @@ function renderStoreSelectionOptions(stores) {
 	});
 }
 
-//add store to dropdown
-function addSelectOptionForStore(store) {
-	const option = document.createElement("option");
-	// the option value will appear within e.target.value
-	option.value = store.id;
-	// the options textContent will be what the user sees when choosing an option
-	option.textContent = store.name;
-	storeSelector.append(option);
-}
-
+/* adds name of bookstore to header */
 function renderHeader(bookStore) {
 	document.querySelector("#store-name").textContent = bookStore.name;
 }
 
+/* adds details of bookstore to footer */
 function renderFooter(bookStore) {
 	document.querySelector("#address").textContent = bookStore.address;
 	document.querySelector("#number").textContent = bookStore.number;
 	document.querySelector("#store").textContent = bookStore.location;
 }
 
+/* renders one book object as card*/
 function renderBook(book) {
 	const li = document.createElement("li");
 	const titleNode = document.createElement("h3");
@@ -69,6 +73,6 @@ function renderBook(book) {
 		pStock.textContent = "In stock";
 	}
 	li.append(pStock);
-	//2c.
+	//✅ 2c.
 	return li;
 }
