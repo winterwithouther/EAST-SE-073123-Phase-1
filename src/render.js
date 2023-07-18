@@ -1,40 +1,4 @@
-function formatPrice(price) {
-	return "$" + Number.parseFloat(price).toFixed(2);
-}
-
-//render stores for dropdown and add event listener to re-render header, footer
-function renderStoreSelectionOptions(stores) {
-	storeSelector.innerHTML = "";
-	stores.forEach(addSelectOptionForStore);
-	storeSelector.addEventListener("change", (e) => {
-		getJSON(`${url}/stores/${e.target.value}`).then((store) => {
-			renderHeader(store);
-			renderFooter(store);
-		});
-	});
-}
-
-//add store to dropdown as <option> tag
-function addSelectOptionForStore(store) {
-	const option = document.createElement("option");
-	option.value = store.id;
-	option.textContent = store.name;
-	storeSelector.append(option);
-}
-
-//render header for selected store
-function renderHeader(bookStore) {
-	document.querySelector("#store-name").textContent = bookStore.name;
-}
-
-//render footer for selected store
-function renderFooter(bookStore) {
-	document.querySelector("#address").textContent = bookStore.address;
-	document.querySelector("#number").textContent = bookStore.number;
-	document.querySelector("#store").textContent = bookStore.location;
-}
-
-//render card for a book
+/* renders one book object as card*/
 function renderBook(book) {
 	const li = document.createElement("li");
 	const titleNode = document.createElement("h3");
@@ -52,10 +16,10 @@ function renderBook(book) {
 	pInventory.type = "number";
 	pInventory.value = book.inventory;
 
-	//🛑 try refactoring this into its own delete function
+	//🛑 try refactoring this into its own delete function (li is out of scope)
 	deleteBtn.textContent = "Delete";
 	deleteBtn.addEventListener("click", (e) => {
-		//li.remove(); 🛑 optimistic
+		//🛑 optimistic: li.remove();
 		//✅ 2a. update the server with a delete request
 		fetch(`${url}/books/${book.id}`, {
 			method: "DELETE",
@@ -85,12 +49,11 @@ function renderBook(book) {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log('yay')
+				console.log("yay");
 			})
 			.catch((err) => console.log("sad"));
 	});
 
-	//✅ 3b. refactor inventory text here and later outside
 	const pStock = document.createElement("p");
 	pStock.className = "grey";
 	if (book.inventory === 0) {
@@ -113,7 +76,44 @@ function renderBook(book) {
 	return li;
 }
 
-//render errors
+/* helper function to format the price of a book */
+function formatPrice(price) {
+	return "$" + Number.parseFloat(price).toFixed(2);
+}
+
+/* render list of stores to select from */
+function renderStoreSelectionOptions(stores) {
+	storeSelector.innerHTML = "";
+	stores.forEach(addSelectOptionForStore);
+	storeSelector.addEventListener("change", (e) => {
+		getJSON(`${url}/stores/${e.target.value}`).then((store) => {
+			renderHeader(store);
+			renderFooter(store);
+		});
+	});
+}
+
+/* helper function to add a single store to select store dropdown */
+function addSelectOptionForStore(store) {
+	const option = document.createElement("option");
+	option.value = store.id;
+	option.textContent = store.name;
+	storeSelector.append(option);
+}
+
+/* adds name of bookstore to header */
+function renderHeader(bookStore) {
+	document.querySelector("#store-name").textContent = bookStore.name;
+}
+
+/* adds details of bookstore to footer */
+function renderFooter(bookStore) {
+	document.querySelector("#address").textContent = bookStore.address;
+	document.querySelector("#number").textContent = bookStore.number;
+	document.querySelector("#store").textContent = bookStore.location;
+}
+
+/* helper function to render div with error for .catch */
 function renderError(error) {
 	const main = document.querySelector("main");
 	const errorDiv = document.createElement("div");

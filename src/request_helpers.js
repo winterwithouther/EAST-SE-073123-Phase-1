@@ -1,7 +1,9 @@
+/* function to return a promise for GET request */
 function getJSON(url) {
   return fetch(url).then(response => response.json())
 }
 
+/* function to return a promise for a POST request */
 function postJSON(url, data) {
   return fetch(url, {
     method: "POST",
@@ -18,6 +20,7 @@ function postJSON(url, data) {
     })
 }
 
+/* function to return a promise for a PATCH request */
 function patchJSON(url, data) {
   return fetch(url, {
     method: "PATCH",
@@ -34,6 +37,7 @@ function patchJSON(url, data) {
     })
 }
 
+/* function to return a promise for a DELETE request */
 function deleteJSON(url) {
   return fetch(url, { method: "DELETE" })
     .then(res => {
