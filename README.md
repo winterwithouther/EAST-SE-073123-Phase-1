@@ -9,25 +9,9 @@
 
 ## Deliverables 
 
-- Demo a simple event:
-    - Add an eventListener to an element and log the event object. Do something simple as an example before integrating events into the application. (Such as a click that console.logs)
-- Demo click event and remove 
-    - In renderBookCard, add an event listener to the Delete button.
-    - Add a callback that removes the li. You can do this through the li itself or the event.target.parentElement
-- Demo Forms and Submit
-    - Select the form with the id of ‘book-form’.
-    - Add a submit eventListener.
-    - Pass the eventListener a callback that handles the form.
-    - The callback takes the event as a parameter.
-    - It should prevent the form's default behavior.
-    - It should build a book object using the event object through the name attribute (e.target.title.value), the id attribute (note the ids are in kabab case so you’ll need to select the id with bracket notation (e.target[form-title].value) or index of the input (e.target[0].value)
-    - Call renderBook and pass it the new book object.
-- Demo DOMContentLoaded
-    - Add a DOMContentLoaded eventListener to the document and wrap the code within the callback function
-- Bonus
-	- Create a new store object with the same properties as BookStore.
-	- Add a button that toggles the store information to a different store.
-	- Add eventListener for a click that toggles the store info in the header and footer to the new store object.
+1. add an event listener to the delete button that removes the card from the DOM
+2. add a submit event listener to the form that adds a new book to the DOM
+3. add an event listener to the "add new book" button that toggles the form 
 
 
 ## Events
