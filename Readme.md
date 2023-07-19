@@ -6,6 +6,10 @@
 
 ## Deliverables 
 
+1. Use the new store form to also update an existing store in the database
+2. Make a delete request for a book 
+3. Update a book's inventory
+
 - Demo: Delete
     - In renderBookCard, within the callback passed to the eventListener on the delete button, create a DELETE request.
     - Update the DOM pessimistically 
