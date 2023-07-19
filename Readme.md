@@ -16,6 +16,14 @@ Easley's Technical Books has asked us to build them an inventory management tool
 
 Today we will work on functions that may help us accomplish some tasks related to displaying data on the application. 
 
+1. function helloWorld() console logs "hello, world!"
+2. function formatPrice(price) returns a price in the format $1.11
+3. write formatPrice(price) as an arrow function
+4. function blurb() accepts a book object and returns a sentence with the title and price of book
+5. use formatPrice(price) on an array of prices
+6. write .map from scratch
+
+
 ## Functions
 Functions are like a little program. They consist of a set of statements/tasks and return a value or undefined. 
 
