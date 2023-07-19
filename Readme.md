@@ -12,41 +12,9 @@
 
 ## Deliverables 
 
-- Demo JSON server
-    - Explore JSON-server and fire up the server in the src directory with json-server –watch db.json
-- Demo GET all
-    - Make a fetch request to /books. 
-    - Review the promises object
-    - Use .then to handle a successful promise with a callback and .catch to handle a failed promise with a callback.
-    - Use .json to convert our response body into a javascript object.
-    - Create a second .then to handle the promise from .json. 
-    - Render the data on the DOM 
-- Demo GET one
-    - Make a fetch request to /stores/1 
-    - Use .then to handle a successful promise with a callback and .catch to handle a failed promise with a callback.
-    - Use .json to convert our response body into a javascript object.
-    - Create a second .then to handle the promise from .json. 
-    - Render the data on the DOM 
-- Refactor:
-    - Create a function called fetchResource that takes a url or endpoint as a parameter.
-    - Return a fetch call that’s passed the URL.
-    - Handle the promise with a .then that takes a callback.
-    - Use .json to convert our response body into a javascript object.
-    - Call fetchResource and pass it the URL for ‘/books’
-    - Chain a .then onto the fetch resource that takes a callback.
-    - The callback should render the books on the DOM
-    - Add a .catch to handle a failed promise 
-    - Call fetchResource and pass it the URL for ‘/stores/1
-    - Chain a .then onto the fetch resource that takes a callback.
-    - The callback should render the store on the DOM
-    - Add a .catch to handle a failed promise 
-- Bonus
-    - Create a fetch request that fetches all stores
-    - Create a ul with a class name of store-menu.
-    - Create a li for each store that's appended to the ul. The li's text content should be the store name, and it should have an id with the store's id.
-    - Add an eventListener for click to each li.
-    - The listener should change the header and footer to the information to match the store that was selected. You can do this without an additional fetch, but if you'd like to demo fetch again, make a fetch call for the specific store information. 
-
+1. Demo json-server 
+2. Use a fetch request to render all books in the DOM
+3. Use db.json to get information about the store
 
 ## The Web
 ![request_response](assets/request_response.png)
