@@ -4,27 +4,10 @@
 - [ ] Explain the difference between optimistic and pessimistic rendering
 
 ## Deliverables 
-- Inside of handleForm make a POST request to ‘/books’
-    - Explore the MDN documentation on POST 
-    - Review the request object and what each property represents. 
-    - Review JSON.stringify and why it's used on the body of our request
-    - Handle the promise using a .then
-    - Pass the .then a callback that calls .json on the response
-    - Handle the promise using a second .then 
-    - Render data to the DOM 
-    - Discuss optimistic vs pessimistic rendering
-    - Add a .catch to handle failed promises 
 
-- Refactor 
-    - Move the post functionality to a function called createResource. The function should have a URL and body as its parameters.
-    - Return the POST request.
-    - Call createResource in handleForm, passing it the URL for ‘/books’ and the book Object.
-    - Remove the second .then and .catch from the POST and chain it to the invocation of createResource
-- Bonus
-    - Create a store form in index.html
-    - Add a submit eventListener to form
-    - Add a new form handler that builds store
-    - Call POST request to add store
+1. Refactor index.js
+2. Include a POST request in bookForm submit
+3. Implement new store form and store dropdown
 
 ## POST (Create)
 ![post](assets/post.png)
