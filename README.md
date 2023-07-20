@@ -7,12 +7,12 @@
 - [ ] Use asynchronous JavaScript to retrieve data
 
 
-| Lecture                          	| Notes 	| Videos 	| Starter 	| Solution 	|
-|----------------------------------	|:-----:	|--------	|---------	|----------	|
-| Functions & Scope                	|       	|        	|         	|          	|
-| DOM Manipulation                 	|       	|        	|         	|          	|
-| DOM Events                       	|       	|        	|         	|          	|
-| Communicating with the Server    	|       	|        	|         	|          	|
-| POST Requests                    	|       	|        	|         	|          	|
-| PATCH & DELETE Requests          	|       	|        	|         	|          	|
-| Communicating with External APIs 	|       	|        	|         	|          	|
+|No. | Lecture                          	| Notes 	| Videos 	| Starter 	| Solution 	|
+|----|------------------------------	|:-----:	|--------	|---------	|----------	|
+|1 | Functions & Scope                	|       	|        	|         	|          	|
+|2 | DOM Manipulation                 	|       	|        	|         	|          	|
+|3 | DOM Events                       	|       	|        	|         	|          	|
+|4 | Communicating with the Server    	|       	|        	|         	|          	|
+|5 | POST Requests                    	|       	|        	|         	|          	|
+|6 | PATCH & DELETE Requests          	|       	|        	|         	|          	|
+|7 | Communicating with External APIs 	|       	|        	|         	|          	|
