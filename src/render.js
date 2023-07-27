@@ -53,6 +53,7 @@ function renderBook(book) {
 			})
 			.catch((err) => console.log("sad"));
 	});
+	//✅ 4. generate CSS using chatGPT in chatgpt_style.css
 
 	const pStock = document.createElement("p");
 	pStock.className = "grey";
