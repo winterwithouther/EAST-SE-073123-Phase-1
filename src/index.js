@@ -8,6 +8,9 @@ const bookForm = document.querySelector('#book-form'); //book form
 //🛑 check /stores and /books and /comments
 //🛑 show status codes in terminal
 //🛑 pull up docs for json-server to reference
+//✅ 1b. use chat-gpt to generate additional stores
+    //generate JSON for 5 technology bookstores with the following fields: location, name, address, number
+    //add an id field that increments by one starting with an id of 4
 
 
 ///////////////////////////////
