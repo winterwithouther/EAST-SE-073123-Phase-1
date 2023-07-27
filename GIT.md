@@ -1,4 +1,4 @@
-# SENG-LIVE-Phase-1-JavaScript-Inventory-Tracking-Tool
+# GITHUB
 
 ## How to use this repository
 
