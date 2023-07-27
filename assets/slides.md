@@ -63,7 +63,6 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 
 <aside class="notes">
 - how do we get the link to clone the repo?  what is the address at which the repo is stored? <br />
-- UNCHECK UNCHECK UNCHECK CLONE ONLY MAIN BRANCH
 </aside>
 
 ---

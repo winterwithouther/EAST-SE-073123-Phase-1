@@ -43,12 +43,47 @@ To do this there are a two main tasks we'll want to complete.
 
 Now that you have the repository cloned to your local machine, you'll be able to following along with lecture inside of your own code editor if you wish.
 
-## Before Beginning
+## Syncing Forked Branches
 
-1. Click on the Fetch & Merge button on your fork of the repository on GitHub.
-2. Run `git pull` from within the attached terminal of your local copy of the repository in VS Code.
+If you are on the branch 01_starter, there may be additional content I have added before we start the 01_starter lecture.  In order to get my most recent changes for the 01_starter branch
+1. In terminal add a new connection called "upstream" that will point to the original repository (my repository).
+```
+> git remote add upstream git@github.com:rachelAtFlatiron/EAST-SE-073123-Phase-1.git
+```
+2. When you want to sync your current branch with my current branch do the following:
+```
+> git pull upstream <rachels_branch>
+```
 
-![Fetch and Merge Into Git Pull](assets/fetch-and-merge-into-git-pull.gif)
+
+## Getting New Branches
+
+There may be new branches added to the lecture repo as we work through the material.  To get any new branches onto your local repo do the following:
+1. Navigate to your phase repo in your github account
+2. Navigate to all your branches
+
+<img src='./assets/branches.png' width="600" />
+
+3. Click on 'new branch'
+
+<img src="./assets/new-branch.png" width="600" />
+
+4. Fill out the form
+<img src="./assets/source-branch.png" width="600" />
+
+- red: your branch name
+- blue: my repo (rachelAtFlatiron/EAST...)
+- green: the branch from my repo that you want
+
+5. In terminal navigate to your phase 1 lecture folder
+6. Run `git fetch` to get all new branches from the remote repository
+7. Run `git checkout <branch-name>` to switch to the new branch that was made in the remote repository
+
+```
+> git fetch
+> git checkout example_branch
+```
+
 
 ## Recommended VS Code Extension for Git
 
@@ -81,3 +116,5 @@ If you have code stashed in your local repository, it won't be visible within th
 ![Applying a Stash](assets/applying-stash-to-add-change-back-to-folder.gif)
 
 If you prefer, you can simply keep your code in the stash and it'll allow you to more clearly see the difference between your code and the starter code when you click on a stashed change within the Version Control Tab's Stashes dropdown. It will show you a visual diff with your additions highlighted in green and your removals highlighted in red.
+
+
