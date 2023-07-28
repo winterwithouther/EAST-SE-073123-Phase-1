@@ -1,4 +1,4 @@
-# SENG-LIVE-0731-23-Phase-1-JavaScript
+# SENG-LIVE-073123-Phase-1-JavaScript
 ## Phase Level Objectives
 - [ ] Understand the fundamentals of JavaScript as a language, including functions and scope
 - [ ] Use data types and structures to solve problems in JavaScript
