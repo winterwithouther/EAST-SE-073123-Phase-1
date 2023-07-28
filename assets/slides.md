@@ -31,9 +31,11 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 ---
 
 ## Version Control
-#### a.k.a. source control
 <br />
-- tracking and managing changes to software
+
+#### Tracking and managing changes to software
+
+<img src="https://media.tenor.com/S7ztCa0y3nQAAAAC/one-does-not-simply-vcs.gif" />
 
 <aside class="notes">
 - view past version of project, entire history of every file <br />
@@ -45,7 +47,10 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 
 ## Repository
 
-- A directory of files that are tracked by Git.
+#### A directory of files that are tracked by Git.
+
+<aside class="notes">
+</aside>
 
 ---
 
@@ -54,11 +59,16 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 - fork: make a copy of the repo into your own account
 - clone: copy the repo onto your computer
 
+<aside class="notes">
+
+- you will be using these two actions to get the lecture repo onto your computer
+</aside>
+
 ---
 
 ## 1. Fork
 
-- make a copy of the lecture repo into your own account
+#### make a copy of the lecture repo into your own account
 <img src="./forking-a-repo.gif" />
 
 <aside class="notes">
@@ -68,7 +78,7 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 ---
 
 ## 2. SSH
-- get the link to clone the repo to your local machine
+#### get the link to clone the repo to your local machine
 <img src="./get-ssh-clone-link.gif" />
 
 <aside class="notes">
@@ -79,7 +89,7 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 
 ## 3. Clone
 
-- clone that copy onto your computer using the SSH link
+#### clone that copy onto your computer using the SSH link
 <img src="./cloning-to-your-machine.gif" />
 
 <aside class="notes">
@@ -89,17 +99,20 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 ---
 
 ## Branches
+#### "An independent line of development"
 
-<img src="https://wac-cdn.atlassian.com/dam/jcr:c6db91c1-1343-4d45-8c93-bdba910b9506/02%20Branch-1%20kopiera.png?cdnVersion=1133" />
+<img src="https://wac-cdn.atlassian.com/dam/jcr:389059a7-214c-46a3-bc52-7781b4730301/hero.svg?cdnVersion=1134" />
 
-<small>Image source: <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge" rel="noopener noreferrer" target="_blank">Atlassian</a></small>
+<small>Image source: <a href="https://www.atlassian.com/git/tutorials/using-branches" rel="noopener noreferrer" target="_blank">Atlassian</a></small>
 
 <aside class="notes">
-- once you are satisfied with the experiment you can integrate it back into the main branch with a "merge" <br />
+
+
 - show different branches on remote for this repo <br />
 - main branch should be your working version, it should be the version of code that you may see on an actual website <br />
 - the branch called "feature" is initially a version of the main branch that you can then experiment with <br />
-- show branches in personal account
+- show branches in personal account <br />
+- once you are satisfied with the experiment you can integrate it back into the main branch with a "merge" <br />
 
 - EXPLORE THE BRANCHES IN REPO
 </aside>
@@ -108,7 +121,7 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 
 ## Saving Changes 
 
-- Whenever you make changes to the files and you are satisfied with those changes, save a version of your code as a commit.
+#### Whenever you make changes to the files and you are satisfied with those changes, save a version of your code as a commit.
 
 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Si7ksd-d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://cdn-images-1.medium.com/max/800/1%2AdiRLm1S5hkVoh5qeArND0Q.png" />
 
@@ -128,7 +141,7 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 
 ---
 
-## Github.com (Remote)
+## Remote vs Local
 
 - local: the repo on your computer
 - remote (origin): the repo on Github.com
@@ -150,4 +163,64 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 - origin refers to the remote repo, main refers to the branch you want to interact with (git remote, git remote -v) <br />
 
 - DEMO THIS 
+</aside>
+
+---
+
+## Merge
+
+#### Takes different branches or versions and files and tries to combine them
+
+<img src="https://media.tenor.com/bz2lD_WtMwEAAAAd/git-merge.gif" />
+
+<aside class="notes">
+- when you pull or push any differences in code will be merged together
+</aside>
+
+---
+
+## Merge Conflicts
+
+<img src="https://miro.medium.com/v2/resize:fit:1336/1*wB7JgylIlmmDjrbYkBOJDw.jpeg" />
+
+<small>Image source: <a href="https://medium.com/mindorks/understanding-git-merge-git-rebase-88e2afd42671">Medium</a></small>
+
+```
+> git stash 
+> git pull 
+> git stash pop 
+```
+
+<aside class="notes">
+
+- git stash #store current changes
+- git pull #attempt to get code from remote again
+- git stash pop #if you want to see the code that was previous stashed
+</aside>
+
+---
+
+## Merge Conflicts
+
+#### You can also manually edit merge conflicts 
+
+<img src="https://learn.microsoft.com/en-us/visualstudio/version-control/media/vs-2022/git-conflicts-status-ui.png?view=vs-2022" />
+
+<small>Source: <a href="https://learn.microsoft.com/en-us/visualstudio/version-control/git-resolve-conflicts?view=vs-2022">Microsoft</a></small>
+
+---
+
+## Merge Conflicts
+
+#### You can also manually edit merge conflicts 
+
+<img src="https://learn.microsoft.com/en-us/visualstudio/version-control/media/vs-2022/git-conflicts-resolve-conflict.png?view=vs-2022" />
+
+<small>Source: <a href="https://learn.microsoft.com/en-us/visualstudio/version-control/git-resolve-conflicts?view=vs-2022">Microsoft</a></small>
+
+<aside class="notes">
+
+1. Go over your conflicts line by line, and choose between keeping the right or the left side by selecting the checkboxes.
+2. Keep or ignore all of your conflicting changes.
+3. Manually edit your code in the Result window.
 </aside>

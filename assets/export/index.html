@@ -98,7 +98,9 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
         <section >
             
             <h2>What is Github?</h2>
-
+<aside class="notes">
+- as you go through slides show it in relation to the lecture repo
+</aside>
             </section>
     
 
@@ -108,14 +110,25 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
         <section >
             
             <h2>Version Control</h2>
-<h4>a.k.a. source control</h4>
 <br />
-- tracking and managing changes to software
+<h4>Tracking and managing changes to software</h4>
+<img src="https://media.tenor.com/S7ztCa0y3nQAAAAC/one-does-not-simply-vcs.gif" />
 <aside class="notes">
 - view past version of project, entire history of every file <br />
-- branch work off the main (working) version to experiment or develop new features <br />
-- you can merge said branches into the main version once you know everything works <br />
-- collaborate
+- create sandbox areas to try coding something new while maintaining a working draft <br />
+- collaborate: write your own code and combine it with others
+</aside>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Repository</h2>
+<h4>A directory of files that are tracked by Git.</h4>
+<aside class="notes">
 </aside>
             </section>
     
@@ -130,7 +143,11 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 <li>fork: make a copy of the repo into your own account</li>
 <li>clone: copy the repo onto your computer</li>
 </ul>
-
+<aside class="notes">
+<ul>
+<li>you will be using these two actions to get the lecture repo onto your computer</li>
+</ul>
+</aside>
             </section>
     
 
@@ -140,10 +157,8 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
         <section >
             
             <h2>1. Fork</h2>
-<ul>
-<li>make a copy of the lecture repo into your own account
-<img src="./forking-a-repo.gif" /></li>
-</ul>
+<h4>make a copy of the lecture repo into your own account</h4>
+<img src="./forking-a-repo.gif" />
 <aside class="notes">
 - how do we get the link to clone the repo?  what is the address at which the repo is stored? <br />
 </aside>
@@ -156,10 +171,8 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
         <section >
             
             <h2>2. SSH</h2>
-<ul>
-<li>get the link to clone the repo to your local machine
-<img src="./get-ssh-clone-link.gif" /></li>
-</ul>
+<h4>get the link to clone the repo to your local machine</h4>
+<img src="./get-ssh-clone-link.gif" />
 <aside class="notes">
 - under the clone button: ssh/https - USE SSH (its more secure than https)
 </aside>
@@ -172,11 +185,11 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
         <section >
             
             <h2>3. Clone</h2>
-<ul>
-<li>clone that copy onto your computer using the SSH link
-<img src="./cloning-to-your-machine.gif" /></li>
-</ul>
-
+<h4>clone that copy onto your computer using the SSH link</h4>
+<img src="./cloning-to-your-machine.gif" />
+<aside class="notes">
+- demo forking into personal account <br />
+</aside>
             </section>
     
 
@@ -186,13 +199,30 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
         <section >
             
             <h2>Branches</h2>
-<img src="https://wac-cdn.atlassian.com/dam/jcr:c6db91c1-1343-4d45-8c93-bdba910b9506/02%20Branch-1%20kopiera.png?cdnVersion=1133" />
-<p><small>Image source: <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge" rel="noopener noreferrer" target="_blank">Atlassian</a></small></p>
+<h4>“An independent line of development”</h4>
+<img src="https://wac-cdn.atlassian.com/dam/jcr:389059a7-214c-46a3-bc52-7781b4730301/hero.svg?cdnVersion=1134" />
+<p><small>Image source: <a href="https://www.atlassian.com/git/tutorials/using-branches" rel="noopener noreferrer" target="_blank">Atlassian</a></small></p>
 <aside class="notes">
-- once you are satisfied with the experiment you can integrate it back into the main branch with a "merge" <br />
-- show different branches on remote for this repo <br />
-- main branch should be your working version, it should be the version of code that you may see on an actual website <br />
-- the branch called "feature" is initially a version of the main branch that you can then experiment with
+<ul>
+<li>
+<p>show different branches on remote for this repo <br /></p>
+</li>
+<li>
+<p>main branch should be your working version, it should be the version of code that you may see on an actual website <br /></p>
+</li>
+<li>
+<p>the branch called “feature” is initially a version of the main branch that you can then experiment with <br /></p>
+</li>
+<li>
+<p>show branches in personal account <br /></p>
+</li>
+<li>
+<p>once you are satisfied with the experiment you can integrate it back into the main branch with a “merge” <br /></p>
+</li>
+<li>
+<p>EXPLORE THE BRANCHES IN REPO</p>
+</li>
+</ul>
 </aside>
             </section>
     
@@ -202,11 +232,8 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
     
         <section >
             
-            <h2>Repository</h2>
-<ul>
-<li>A directory of files that are tracked by Git.</li>
-<li>Whenever you make changes to the files and you are satisfied with those changes, save a version of your code as a commit.</li>
-</ul>
+            <h2>Saving Changes</h2>
+<h4>Whenever you make changes to the files and you are satisfied with those changes, save a version of your code as a commit.</h4>
 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Si7ksd-d--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://cdn-images-1.medium.com/max/800/1%2AdiRLm1S5hkVoh5qeArND0Q.png" />
 <pre><code>&gt; git add .
 &gt; git commit -m &quot;Some message here&quot;
@@ -216,9 +243,11 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 - you can add specific files to the staging area and omit others in preparation for the commit <br />
 - only things in the staging area will be included in the commit <br />
 - `git status` <br />
-- `git log`
+- `git log` <br />
+<ul>
+<li>DEMO THIS, MAKE SOME CHANGES</li>
+</ul>
 </aside>
-
             </section>
     
 
@@ -227,7 +256,7 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
     
         <section >
             
-            <h2><a href="http://Github.com">Github.com</a> (Remote)</h2>
+            <h2>Remote vs Local</h2>
 <ul>
 <li>local: the repo on your computer</li>
 <li>remote (origin): the repo on <a href="http://Github.com">Github.com</a></li>
@@ -242,7 +271,78 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 </code></pre>
 <aside class="notes">
 - git pull will immediately merge with current branch <br />
-- origin refers to the remote repo, main refers to the branch you want to interact with (git remote, git remote -v)
+- origin refers to the remote repo, main refers to the branch you want to interact with (git remote, git remote -v) <br />
+<ul>
+<li>DEMO THIS</li>
+</ul>
+</aside>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Merge</h2>
+<h4>Takes different branches or versions and files and tries to combine them</h4>
+<img src="https://media.tenor.com/bz2lD_WtMwEAAAAd/git-merge.gif" />
+<aside class="notes">
+- when you pull or push any differences in code will be merged together
+</aside>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Merge Conflicts</h2>
+<img src="https://miro.medium.com/v2/resize:fit:1336/1*wB7JgylIlmmDjrbYkBOJDw.jpeg" />
+<p><small>Image source: <a href="https://medium.com/mindorks/understanding-git-merge-git-rebase-88e2afd42671">Medium</a></small></p>
+<pre><code>&gt; git stash 
+&gt; git pull 
+&gt; git stash pop 
+</code></pre>
+<aside class="notes">
+<ul>
+<li>git stash #store current changes</li>
+<li>git pull #attempt to get code from remote again</li>
+<li>git stash pop #if you want to see the code that was previous stashed</li>
+</ul>
+</aside>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Merge Conflicts</h2>
+<h4>You can also manually edit merge conflicts</h4>
+<img src="https://learn.microsoft.com/en-us/visualstudio/version-control/media/vs-2022/git-conflicts-status-ui.png?view=vs-2022" />
+<p><small>Source: <a href="https://learn.microsoft.com/en-us/visualstudio/version-control/git-resolve-conflicts?view=vs-2022">Microsoft</a></small></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Merge Conflicts</h2>
+<h4>You can also manually edit merge conflicts</h4>
+<img src="https://learn.microsoft.com/en-us/visualstudio/version-control/media/vs-2022/git-conflicts-resolve-conflict.png?view=vs-2022" />
+<p><small>Source: <a href="https://learn.microsoft.com/en-us/visualstudio/version-control/git-resolve-conflicts?view=vs-2022">Microsoft</a></small></p>
+<aside class="notes">
+<ol>
+<li>Go over your conflicts line by line, and choose between keeping the right or the left side by selecting the checkboxes.</li>
+<li>Keep or ignore all of your conflicting changes.</li>
+<li>Manually edit your code in the Result window.</li>
+</ol>
 </aside>
             </section>
     
