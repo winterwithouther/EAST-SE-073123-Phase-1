@@ -93,7 +93,7 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 <img src="./cloning-to-your-machine.gif" />
 
 <aside class="notes">
-- demo forking into personal account <br />
+
 </aside>
 
 ---
@@ -139,37 +139,12 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 - DEMO THIS, MAKE SOME CHANGES
 </aside>
 
----
-
-## Remote vs Local
-
-- local: the repo on your computer
-- remote (origin): the repo on Github.com
-- push: get changes from local to remote
-- pull: get changes from remote to local
-
-```
-> git add .
-> git commit -m 'Some message here'
-> git push origin main
-```
-
-```
-> git pull origin main
-```
-
-<aside class="notes">
-- git pull will immediately merge with current branch <br />
-- origin refers to the remote repo, main refers to the branch you want to interact with (git remote, git remote -v) <br />
-
-- DEMO THIS 
-</aside>
 
 ---
 
 ## Merge
 
-#### Takes different branches or versions and files and tries to combine them
+#### Takes different branches or versions of files and tries to combine them
 
 <img src="https://media.tenor.com/bz2lD_WtMwEAAAAd/git-merge.gif" />
 
@@ -223,4 +198,31 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 1. Go over your conflicts line by line, and choose between keeping the right or the left side by selecting the checkboxes.
 2. Keep or ignore all of your conflicting changes.
 3. Manually edit your code in the Result window.
+</aside>
+
+
+---
+
+## Remote vs Local
+
+- local: the repo on your computer
+- remote (origin): the repo on Github.com
+- push: get changes from local to remote
+- pull: get changes from remote to local
+
+```
+> git add .
+> git commit -m 'Some message here'
+> git push origin main
+```
+
+```
+> git pull origin main
+```
+
+<aside class="notes">
+- git pull will immediately merge with current branch <br />
+- origin refers to the remote repo, main refers to the branch you want to interact with (git remote, git remote -v) <br />
+
+- DEMO THIS 
 </aside>

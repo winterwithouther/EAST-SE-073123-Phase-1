@@ -188,7 +188,6 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 <h4>clone that copy onto your computer using the SSH link</h4>
 <img src="./cloning-to-your-machine.gif" />
 <aside class="notes">
-- demo forking into personal account <br />
 </aside>
             </section>
     
@@ -256,36 +255,8 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
     
         <section >
             
-            <h2>Remote vs Local</h2>
-<ul>
-<li>local: the repo on your computer</li>
-<li>remote (origin): the repo on <a href="http://Github.com">Github.com</a></li>
-<li>push: get changes from local to remote</li>
-<li>pull: get changes from remote to local</li>
-</ul>
-<pre><code>&gt; git add .
-&gt; git commit -m 'Some message here'
-&gt; git push origin main
-</code></pre>
-<pre><code>&gt; git pull origin main
-</code></pre>
-<aside class="notes">
-- git pull will immediately merge with current branch <br />
-- origin refers to the remote repo, main refers to the branch you want to interact with (git remote, git remote -v) <br />
-<ul>
-<li>DEMO THIS</li>
-</ul>
-</aside>
-            </section>
-    
-
-
-
-    
-        <section >
-            
             <h2>Merge</h2>
-<h4>Takes different branches or versions and files and tries to combine them</h4>
+<h4>Takes different branches or versions of files and tries to combine them</h4>
 <img src="https://media.tenor.com/bz2lD_WtMwEAAAAd/git-merge.gif" />
 <aside class="notes">
 - when you pull or push any differences in code will be merged together
@@ -343,6 +314,34 @@ favorite documentation: [atlassian](https://www.atlassian.com/git/tutorials)
 <li>Keep or ignore all of your conflicting changes.</li>
 <li>Manually edit your code in the Result window.</li>
 </ol>
+</aside>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Remote vs Local</h2>
+<ul>
+<li>local: the repo on your computer</li>
+<li>remote (origin): the repo on <a href="http://Github.com">Github.com</a></li>
+<li>push: get changes from local to remote</li>
+<li>pull: get changes from remote to local</li>
+</ul>
+<pre><code>&gt; git add .
+&gt; git commit -m 'Some message here'
+&gt; git push origin main
+</code></pre>
+<pre><code>&gt; git pull origin main
+</code></pre>
+<aside class="notes">
+- git pull will immediately merge with current branch <br />
+- origin refers to the remote repo, main refers to the branch you want to interact with (git remote, git remote -v) <br />
+<ul>
+<li>DEMO THIS</li>
+</ul>
 </aside>
             </section>
     

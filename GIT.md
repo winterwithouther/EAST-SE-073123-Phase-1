@@ -81,3 +81,9 @@ If you have code stashed in your local repository, it won't be visible within th
 ![Applying a Stash](assets/applying-stash-to-add-change-back-to-folder.gif)
 
 If you prefer, you can simply keep your code in the stash and it'll allow you to more clearly see the difference between your code and the starter code when you click on a stashed change within the Version Control Tab's Stashes dropdown. It will show you a visual diff with your additions highlighted in green and your removals highlighted in red.
+
+---
+
+### Resources
+
+[Git Explorer](https://gitexplorer.com/)
