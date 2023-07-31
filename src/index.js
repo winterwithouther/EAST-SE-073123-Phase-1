@@ -67,7 +67,7 @@ const inventory = [
 
 //✅ 1. Create hello world using REGULAR functions
 function helloWorld(){
-  return 
+  return "surprise"
 }
 //✅ 2. For Easley's bookstore, create formatPrice(price)
 
