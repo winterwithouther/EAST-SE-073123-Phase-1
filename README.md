@@ -9,7 +9,7 @@
 
 |No. | Lecture                          | Video 	| Starter 	| Solution 	|
 |----|------------------------------	|:-----:	|--------	|---------	|
-|1 | Functions & Scope                	|       	|        	|         	|
+|1 | Functions & Scope                	| [Video](https://youtu.be/CiB0iBdoO6Q )       	| [01_starter](https://github.com/rachelAtFlatiron/EAST-SE-073123-Phase-1/tree/01_demo)       	| [01_demo](https://github.com/rachelAtFlatiron/EAST-SE-073123-Phase-1/tree/01_starter)         	|
 |2 | DOM Manipulation                 	|       	|        	|         	|
 |3 | DOM Events                       	|       	|        	|         	|
 |4 | Communicating with the Server    	|       	|        	|         	|
