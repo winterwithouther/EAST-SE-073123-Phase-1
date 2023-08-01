@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>VSCode Reveal intro</title>
+  <title>03_dom_events</title>
 
   <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
   <meta name="author" content="Hakim El Hattab">
@@ -51,10 +51,15 @@
 
    <!-- css list -->
 	
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  
 
    
+<style>
+  :root {
+     --r-main-font-size: 24px;
+        
+  }
+</style>
+
 
 </head>
 
@@ -112,7 +117,9 @@ input {
   alt="Data Display and Behavior" 
   style="width: 85%" 
 /></p>
-
+<aside class="notes">
+- worked on data and display so far
+</aside>
             </section>
     
 
@@ -126,7 +133,11 @@ input {
   alt="Data Display and Behavior with Events" 
   style="width: 85%" 
 /></p>
-
+<aside class="notes">
+- incorporate user behavior <br />
+- onClick, onSubmit: update DOM <br />
+- always this order, going to constantly apply this pattern
+</aside>
             </section>
     
 
@@ -149,6 +160,11 @@ input {
   style="width: 85%" 
 /></p>
 </div> 
+<aside class="notes">
+- setup is series of question, train of thought to follow <br />
+- setup is good to use for pseudocode <br />
+- when document loads it tracks every event (even mouse movements and keyboard presses) <br />
+</aside>
             </section>
     
 
@@ -164,7 +180,8 @@ input {
 <li>Add event listener for target and specify type (as first argument)</li>
 <li>add logic to handle the event to event handler callback (as second argument)</li>
 </ul>
-
+<aside class="notes">
+</aside>
             </section>
     
 
@@ -178,7 +195,8 @@ input {
   alt="Anatomy of an event listener diagram" 
   style="width: 90%" 
 /></p>
-
+<aside class="notes">
+</aside>
             </section>
     
 
@@ -209,7 +227,16 @@ button.addEventListener('click', handleClick);
 <li>Why would <code>addEventListener</code> be considered a higher order function?</li>
 <li>In which case is <code>handleClick</code> behaving as an event handler? Line 4 or line 8? Why?</li>
 </ul>
-
+<aside class="notes">
+- code is running in slide <br />
+- addEventListener is higher order function because we are passing it a function <br />
+- (1. take another function as parameter OR 2. returns a function; passing cb is more common) <br />
+- line 8; handleClick doesn't relate to events until it is passed to an eventHandler <br />
+- can invoke a handleClick whenever we want, not just passing it to an eventHandler <br />
+- removeEventListener; for example if you only want an eventListener to run once and only once <br />
+- sync (invoked before next expression, forEach, map); async (addEventListener, run later in program, not invoked immediately, saved for later use) <br />
+- setTimeout()
+</aside>
             </section>
     
 
@@ -240,6 +267,13 @@ form.addEventListener('submit', (e) => {
   console.log(form.q);
 });
 </script></code></pre>
+<aside class="notes">
+- submit is for forms <br />
+- demo submit without e.preventDefault() <br />
+- ❔ what do you notice about the fx of submitting form (DOM reloads/page refreshes; text disappears; input is showing up in URL) <br />
+- explain default way forms handle submissions <br />
+- ❔ why wouldn't we want our DOM to respond the default way
+</aside>
             </section>
     
 
@@ -272,6 +306,13 @@ otherForm.addEventListener('submit', (e) => {
   console.log(otherForm.q.value);
 });
 </script></code></pre>
+<aside class="notes">
+- all functions expect parameters (multiple, optional, none); ex. forEach MDN; eventListener MDN <br />
+- event is always passed as a parameter to the callback (can name it whatever; best to call it e, event, etc.) <br />
+- click event doesn't really need event handler because we probably won't use it <br />
+- won't get errors for leaving off a parameter (goal of parameter is to affect output in some way) <br />
+- stopPropogation() MDN
+</aside>
             </section>
     
 
@@ -287,7 +328,8 @@ otherForm.addEventListener('submit', (e) => {
 <li>Users should be able to hide the New Book form by clicking the button again or hitting the Escape key on their keyboard</li>
 <li>Users should be able to add a book by filling in the form at the top of the page (the book they add should appear in the DOM)</li>
 </ul>
-
+<aside class="notes">
+</aside>
             </section>
     
 
@@ -308,7 +350,8 @@ otherForm.addEventListener('submit', (e) => {
 <li>Try adding a live updating search feature to an input (while you type in the input, the search results display only matches to what you’ve typed)</li>
 <li>Build your own spoiler (a clickable summary that will display details below when clicked and hide them again when clicked again)</li>
 </ul>
-
+<aside class="notes">
+</aside>
             </section>
     
 
@@ -400,7 +443,7 @@ otherForm.addEventListener('submit', (e) => {
       //#keyboardCondition: null,
       overview: true,
       center: true,
-      touch: true,
+      touch: false,
       loop: false,
       rtl: false,
       //#navigationMode: 'default', linear grid
@@ -447,9 +490,9 @@ otherForm.addEventListener('submit', (e) => {
       parallaxBackgroundVertical: 0,
 
       //Presentation Size
-      width: 1400,
-			height: 900,
-			margin: 0.04,
+      width: 960,
+			height: 700,
+			margin: 0.01,
       minScale: 0.2,
       maxScale: 2,
       disableLayout: false,
