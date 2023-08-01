@@ -9,8 +9,8 @@
 
 |No. | Lecture                          | Video 	| Starter 	| Solution 	|
 |----|------------------------------	|:-----:	|--------	|---------	|
-|1 | Functions & Scope                	| [Video](https://youtu.be/CiB0iBdoO6Q )       	| [01_starter](https://github.com/rachelAtFlatiron/EAST-SE-073123-Phase-1/tree/01_demo)       	| [01_demo](https://github.com/rachelAtFlatiron/EAST-SE-073123-Phase-1/tree/01_starter)         	|
-|2 | DOM Manipulation                 	|       	|        	|         	|
+|1 | Functions & Scope                	| [Video](https://youtu.be/CiB0iBdoO6Q ) | [01_starter](https://github.com/rachelAtFlatiron/EAST-SE-073123-Phase-1/tree/01_demo) | [01_demo](https://github.com/rachelAtFlatiron/EAST-SE-073123-Phase-1/tree/01_starter) |
+|2 | DOM Manipulation                 	| [Video](https://youtu.be/wm0-UcOPTNs) | [02_starter](https://github.com/rachelAtFlatiron/EAST-SE-073123-Phase-1/tree/02_starter) | [02_demo](https://github.com/rachelAtFlatiron/EAST-SE-073123-Phase-1/tree/02_demo)  |
 |3 | DOM Events                       	|       	|        	|         	|
 |4 | Communicating with the Server    	|       	|        	|         	|
 |5 | POST Requests                    	|       	|        	|         	|
