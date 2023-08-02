@@ -37,6 +37,39 @@ renderFooter(bookStore);
 
 //✅ 6. create a function called renderBook(book)
 
+function renderBook(book) {
+
+  let cardLi = document.createElement("li");
+  cardLi.className = "card";
+  
+  let h3 = document.createElement("h3");
+  h3.innerText = book.title;
+  cardLi.append(h3);
+
+  let pAuthor = document.createElement("p");
+  pAuthor.innerText = book.author;
+  cardLi.append(pAuthor);
+
+  let pPrice = document.createElement("p");
+  pPrice.innerText = formatPrice(book.price);
+  cardLi.append(pPrice);
+  
+  let img = document.createElement("img");
+  img.src = book.imageUrl;
+  cardLi.append(img);
+
+  let btn = document.createElement("button");
+  btn.innerText = "Delete"
+  cardLi.append(btn);
+
+  const bookList = document.querySelector("#book-list");
+  document.append(cardLi);
+}
+
+renderBook()
+
+bookStore.inventory.forEach(book => renderBook(book));
+
 /***
 function: create HTML structure for single book and append to page
 input: a book object
