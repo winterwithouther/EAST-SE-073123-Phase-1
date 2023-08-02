@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>P1L4 - Communicating with the Server slides</title>
+  <title>04_communicate_server</title>
 
   <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
   <meta name="author" content="Hakim El Hattab">
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="libs/reveal.js/4.3.1/reset.css">
   <link rel="stylesheet" href="libs/reveal.js/4.3.1/reveal.css">
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <!-- highlight Theme -->
   
@@ -50,10 +51,15 @@
 
    <!-- css list -->
 	
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-  
 
    
+<style>
+  :root {
+     --r-main-font-size: 24px;
+        
+  }
+</style>
+
 
 </head>
 
@@ -104,7 +110,13 @@ input {
 </ul>
 </li>
 </ul>
-
+<aside class="notes">
+<ul>
+<li>NO NEW FEATURES! <br /></li>
+<li>instead of loading from JS file, we will retrieve from web server so that we can modify data and have that persist <br /></li>
+<li></li>
+</ul>
+</aside>
             </section>
     
 
@@ -119,18 +131,18 @@ input {
   style="width: 100%;"
 /></p>
 <aside class="notes">
-<p>Client</p>
+<p>Client <br /></p>
 <ul>
-<li>User interface</li>
-<li>Responsible for styling, layout, and event functionality</li>
-<li>Lightweight and loads fast</li>
-<li>Acts as a “template” for dynamic data</li>
-<li>Makes requests to the server</li>
+<li>User interface / browser running on computer<br /></li>
+<li>Responsible for styling, layout, and event functionality <br /></li>
+<li>Lightweight and loads fast <br /></li>
+<li>Acts as a “template” for dynamic data <br /></li>
+<li>Makes requests to the server (also hooked up to internet) <br /></li>
 </ul>
-<p>Server</p>
+<p>Server <br /></p>
 <ul>
-<li>Responsible for data storage and management</li>
-<li>Changes in data may be triggered by the client, but the actual change is handled by the server-side</li>
+<li>Responsible for data storage and management <br /></li>
+<li>Changes in data may be triggered by the client, but the actual change is handled by the server-side <br /></li>
 <li>Sends a response back to the server</li>
 </ul>
 </aside>
@@ -150,16 +162,19 @@ input {
 /></p>
 <p><small>Image from <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">MDN’s HTTP Overview</a></small></p>
 <aside class="notes">
-<p>HTTP is:</p>
+<p>HTTP is: <br /></p>
 <ul>
-<li>Language protocol used to communicate between the server and client</li>
-<li>Used for fetching resources</li>
-<li>Data exchange</li>
-<li>Readable</li>
-<li>Stateless</li>
-<li>Has sessions</li>
+<li>HyperText Transfer Protocol (HTML = HyperText Markup Language) <br /></li>
+<li>Can have multiple server requests (CDN, google ads, amazon image hosting, etc.)</li>
+<li>Language protocol used to communicate between the server and client <br /></li>
+<li>Used for fetching resources <br /></li>
+<li>Data exchange <br /></li>
+<li>Readable <br /></li>
+<li>Stateless <br /></li>
+<li>Has sessions <br />
+<br />
+Open devtools in Chrome for the slideshow and demo the network tab.</li>
 </ul>
-<p>Open devtools in Chrome for the slideshow and demo the network tab.</p>
 </aside>
             </section>
     
@@ -201,7 +216,11 @@ input {
 </tr>
 </tbody>
 </table>
-
+ <aside class="notes">
+ - related to request part <br />
+ - sometimes request will send back entire pages of HTML <br />
+ - other times they can send back bits and pieces of data (JSON)
+ </aside>
             </section>
     
 
@@ -214,6 +233,40 @@ input {
   src="https://http.cat/"
   style="width: 1500px; max-width: 100%; height: 900px; max-height: 60%"
 ></iframe>
+<aside class="notes">
+<ul>
+<li>status codes, indicates what went on in server and how it went <br /></li>
+<li>explore some of the status codes with students <br /></li>
+<li>400s: errors <br /></li>
+<li>200s: good <br /></li>
+<li>300s: redirection <br /></li>
+<li>500s: server error</li>
+</ul>
+</aside>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>JSON (JavaScript Object Notation)</h3>
+<p><img 
+  src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1665769374/l7GjO7D3eyP2fDOG1wv6bsiTPWAzeYTlYJk8mCWlCXFpyXbDGVtvezulzA7fQ1---9Vs5GKpPnfAoVjX-QeezNH87M6HHcbVb9NViYGEkMWakQDJBi0k69c5fKeBiBQck5PQup45-dlVsjlc4q8uFeG5tJACZ60nwJ7ywjRjyLg6Zcj7775mBYqAr6BE_nw_m4zhfz.png" 
+  alt="JSON example" 
+  style="width: 80%;"
+/></p>
+<aside class="notes">
+<p>JSON is: <br /></p>
+<ul>
+<li>transmit medium, sent/received <br /></li>
+<li>a lightweight data storage for data exchange <br /></li>
+<li>it works with any language <br /></li>
+<li>and it’s easy to read <br /></li>
+<li>different from JS object: keys are surrounded by quotes <br /></li>
+</ul>
+</aside>
             </section>
     
 
@@ -236,12 +289,26 @@ input {
   <div style="width: 50%">
 <h4>Async callbacks</h4>
 <ul>
-<li><code>addEventListener</code></li>
-<li><code>setTimeout</code></li>
-<li><code>Promise.then</code></li>
-</ul>
-  </div>
+<li>
+<p><code>addEventListener</code></p>
+</li>
+<li>
+<p><code>setTimeout</code></p>
+</li>
+<li>
+<p><code>Promise.then</code></p>
 </div>
+</li>
+</ul>
+</div>
+<aside class="notes">
+<ul>
+<li>theory time! <br /></li>
+<li>sync: runs in order of expressions <br /></li>
+<li>async: delay, behavior that is saved for later <br /></li>
+<li>promises are used with requests…see next slide</li>
+</ul>
+</aside>
             </section>
     
 
@@ -255,11 +322,12 @@ input {
 <p><small>Image source: <a href="https://laptrinhx.com/javascript-promises-a-zendesk-introduction-173205527/" rel="noopener noreferrer" target="_blank">Laptrinx.com</a></small></p>
 <aside class="notes">
 <ul>
-<li>When we order food at a restaurant, the chefs don’t wait till one dish is completely ready before starting on the next one.</li>
-<li>They take in the orders from the wait staff and complete them with priorities in mind.</li>
-<li>They’ll finish appetizers first and they may also be dealing with meals ordered by other customers at the same time</li>
-<li>The restaurant could not function properly if dishes could only be processed one at a time and it would be very awkward for our guests if dishes were delivered one at a time in the same order that they were placed!</li>
-<li>Whoever ordered first would end up with cold food! :(</li>
+<li>don’t wait for callback to run, cb will run later <br /></li>
+<li>When we order food at a restaurant, the chefs don’t wait till one dish is completely ready before starting on the next one.<br /></li>
+<li>They take in the orders from the wait staff and complete them with priorities in mind.<br /></li>
+<li>They’ll finish appetizers first and they may also be dealing with meals ordered by other customers at the same time<br /></li>
+<li>The restaurant could not function properly if dishes could only be processed one at a time and it would be very awkward for our guests if dishes were delivered one at a time in the same order that they were placed!<br /></li>
+<li>Whoever ordered first would end up with cold food! :(<br /></li>
 <li>Instead, orders are handled asynchronously, this means that appetizers can be delivered when they’re ready, potentially a couple at a time</li>
 </ul>
 </aside>
@@ -274,7 +342,14 @@ input {
             <h3>Delivering a better experience</h3>
 <img src="https://cdn.buttercms.com/hmirWTF7TBCsX6mncY0P" alt="Synchronous vs Asynchronous delivery in terms of time" />
 <p><small>Image source: <a href="https://scoutapm.com/blog/async-javascript" rel="noopener noreferrer" target="_blank">Scout APM</a></small></p>
-
+<aside class="notes">
+<ul>
+<li>SHOW IN NETWORK TAB</li>
+<li>browser can do multiple things at the same time</li>
+<li>JS cannot do multiple things at a time, only does one task at a time</li>
+<li>things in background and pass callback which is async that will run when task is done</li>
+</ul>
+</aside>
             </section>
     
 
@@ -290,6 +365,12 @@ input {
   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+<aside class="notes">
+<ul>
+<li>run through code <br /></li>
+<li>prioritizes synchronous code, always going to run first <br /></li>
+</ul>
+</aside>
             </section>
     
 
@@ -303,7 +384,15 @@ input {
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" rel="noopener noreferrer" target="_blank">MDN - Promise</a> * <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" rel="noopener noreferrer" target="_blank">MDN - Using Fetch</a></li>
 </ul>
-
+<aside class="notes">
+<ul>
+<li>every promise starts in pending state <br /></li>
+<li>promise is settled after being either fulfilled or rejected <br /></li>
+<li>when fulfilled: promise will resolve to .then’s return value <br /></li>
+<li>visit MDN ‘using fetch’ guide to see example and read description… <br /></li>
+<li>check out response page <br /></li>
+</ul>
+</aside>
             </section>
     
 
@@ -312,18 +401,11 @@ input {
     
         <section >
             
-            <h3>JSON (JavaScript Object Notation)</h3>
-<p><img 
-  src="https://res.cloudinary.com/dlzuobe8h/image/upload/v1665769374/l7GjO7D3eyP2fDOG1wv6bsiTPWAzeYTlYJk8mCWlCXFpyXbDGVtvezulzA7fQ1---9Vs5GKpPnfAoVjX-QeezNH87M6HHcbVb9NViYGEkMWakQDJBi0k69c5fKeBiBQck5PQup45-dlVsjlc4q8uFeG5tJACZ60nwJ7ywjRjyLg6Zcj7775mBYqAr6BE_nw_m4zhfz.png" 
-  alt="JSON example" 
-  style="width: 80%;"
-/></p>
+            <h2>For Our Application</h2>
+<img src="fetch_flow.png" width="90%" />
 <aside class="notes">
-<p>JSON is:</p>
 <ul>
-<li>a lightweight data storage for data exchange</li>
-<li>it works with any language</li>
-<li>and it’s easy to read</li>
+<li>won’t always get JSON back (ex. HTML, blob (binary large object: audio, video), text, form)</li>
 </ul>
 </aside>
             </section>
@@ -337,6 +419,12 @@ input {
             <h2>Mocking the server with</h2>
 <h2>json-server</h2>
 <img src="https://media.giphy.com/media/3oKHW5ygEPHUNrb1SM/giphy.gif" alt="Spongebob delivering a Krabby Patty" />
+<aside class="notes">
+<ul>
+<li>not real server <br /></li>
+<li>will be creating real server in phase 3 and 4</li>
+</ul>
+</aside>
             </section>
     
 
@@ -403,10 +491,12 @@ touch db.json
 </code></pre>
 <p><small>copy and paste the below into the assets/db.json file:</small></p>
 <pre><code class="language-json">{
-  &quot;posts&quot;: [
-    { title: &quot;JSON-server is really cool&quot; },
-    { title: &quot;JSON-server allows you to mock an API server by creating a single file!&quot;}
-  ]
+	&quot;posts&quot;: [
+		{ &quot;title&quot;: &quot;JSON-server is really cool&quot; },
+		{
+			&quot;title&quot;: &quot;JSON-server allows you to mock an API server by creating a single file!&quot;
+		}
+	]
 }
 </code></pre>
 <pre><code class="language-bash">json-server --watch db.json
@@ -551,7 +641,7 @@ touch db.json
       //#keyboardCondition: null,
       overview: true,
       center: true,
-      touch: true,
+      touch: false,
       loop: false,
       rtl: false,
       //#navigationMode: 'default', linear grid
@@ -598,9 +688,9 @@ touch db.json
       parallaxBackgroundVertical: 0,
 
       //Presentation Size
-      width: 1400,
-			height: 900,
-			margin: 0.04,
+      width: 960,
+			height: 700,
+			margin: 0.01,
       minScale: 0.2,
       maxScale: 2,
       disableLayout: false,
