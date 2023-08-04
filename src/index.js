@@ -14,11 +14,26 @@ const bookForm = document.querySelector('#book-form'); //book form
 // communicating with server //
 ///////////////////////////////
 //✅ 2. fetch request to get all books
+const url = "https://localhost:3000/"
+fetch(`${url}books`) // get info from designated url
+  .then(response => response.json()); // get datat from response 
+  // (response contains a lot of things)
+  .then(data => data.forEach(renderBook)); // console.log 
+
 //✅ 2a. save the base url as a const (to reuse later)
   //✅ 2b. render books from database instead of from data.js
 
 
 //✅ 3. use db.json to get information about the store
+fetch(`${url}stores/1`)
+  .then(response => response.json());
+  .then(data => {
+    renderHeader(data)
+    renderFooter(data)
+  })
+  .catch(err => {
+    alert('something went wrong')
+  })
 //✅ 3a. make a fetch request
   //✅ 3b. use data to update DOM
 //✅ 3c. add a .catch for errors
