@@ -16,43 +16,16 @@ function renderBook(book) {
 	pInventory.type = "number";
 	pInventory.value = book.inventory;
 
-	//🛑 try refactoring this into its own delete function (li is out of scope)
 	deleteBtn.textContent = "Delete";
 	deleteBtn.addEventListener("click", (e) => {
-		//🛑 optimistic: li.remove();
+
 		//✅ 2a. update the server with a delete request
-		fetch(`${url}/books/${book.id}`, {
-			method: "DELETE",
-			//🛑 no headers because no body
-		})
-			.then((res) => {
-				if (res.ok) {
-					li.remove(); //🛑 pessimistic
-				} else {
-					renderError("no delete :(");
-				}
-			})
-			.catch((err) => console.log(err));
+
 	});
 
 	//✅ 3. update the inventory
 	//✅ 3a. add an onChange event handler
-	pInventory.addEventListener("change", (e) => {
-		const newInventoryCount = parseInt(e.target.value);
-		fetch(`${url}/books/${book.id}`, {
-			method: "PATCH",
-			headers: {
-				"content-type": "application/json",
-			},
-			//🛑 check if string or int
-			body: JSON.stringify({ inventory: parseInt(newInventoryCount) }),
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				console.log("yay");
-			})
-			.catch((err) => console.log("sad"));
-	});
+
 	//✅ 4. generate CSS using chatGPT in chatgpt_style.css
 
 	const pStock = document.createElement("p");
